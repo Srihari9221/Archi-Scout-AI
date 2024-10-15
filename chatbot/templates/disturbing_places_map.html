@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_f00843428f424a37a87662e8d3006fa9 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_f00843428f424a37a87662e8d3006fa9" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_f00843428f424a37a87662e8d3006fa9 = L.map(
+                "map_f00843428f424a37a87662e8d3006fa9",
+                {
+                    center: [13.0842045, 80.1434146],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_1a6381bb84eada61fd83c6df8e2b0270 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_1a6381bb84eada61fd83c6df8e2b0270.addTo(map_f00843428f424a37a87662e8d3006fa9);
+        
+    
+            var marker_8047289fa79db701fe4efc14082e7945 = L.marker(
+                [13.0842045, 80.1434146],
+                {}
+            ).addTo(map_f00843428f424a37a87662e8d3006fa9);
+        
+    
+            var icon_1edf6daaf38803fe5336b873fe0d5abb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_8047289fa79db701fe4efc14082e7945.setIcon(icon_1edf6daaf38803fe5336b873fe0d5abb);
+        
+    
+        var popup_0b0404ecc8b36819e7cbbc252abef376 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4ec8191049ff700bf89c2d0db6da4001 = $(`<div id="html_4ec8191049ff700bf89c2d0db6da4001" style="width: 100.0%; height: 100.0%;">Royal Club<br>Disturbing Factor: club<br>Distance: 637.31 m</div>`)[0];
+                popup_0b0404ecc8b36819e7cbbc252abef376.setContent(html_4ec8191049ff700bf89c2d0db6da4001);
+            
+        
+
+        marker_8047289fa79db701fe4efc14082e7945.bindPopup(popup_0b0404ecc8b36819e7cbbc252abef376)
+        ;
+
+        
+    
+    
+            var marker_9b11eb48a3c8f157dcf3a07c7acb6eec = L.marker(
+                [13.0831841, 80.1571712],
+                {}
+            ).addTo(map_f00843428f424a37a87662e8d3006fa9);
+        
+    
+            var icon_76a241341a0047edadbcaf33e3f515d8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_9b11eb48a3c8f157dcf3a07c7acb6eec.setIcon(icon_76a241341a0047edadbcaf33e3f515d8);
+        
+    
+        var popup_f5ed4d005ed44c503105a8ea498294d6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_32139eae47902bf30ae79e0571051f82 = $(`<div id="html_32139eae47902bf30ae79e0571051f82" style="width: 100.0%; height: 100.0%;">Nutech CNC Private Limited | Plastic injection mold and products manufacturer | Chennai,India<br>Disturbing Factor: manufacture<br>Distance: 1332.99 m</div>`)[0];
+                popup_f5ed4d005ed44c503105a8ea498294d6.setContent(html_32139eae47902bf30ae79e0571051f82);
+            
+        
+
+        marker_9b11eb48a3c8f157dcf3a07c7acb6eec.bindPopup(popup_f5ed4d005ed44c503105a8ea498294d6)
+        ;
+
+        
+    
+    
+            var marker_8f459779ad1dc56a3aeda3390617ccaf = L.marker(
+                [13.0849717, 80.1571785],
+                {}
+            ).addTo(map_f00843428f424a37a87662e8d3006fa9);
+        
+    
+            var icon_d6eb4f2d413f81da89fad5f8ca03d9bd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_8f459779ad1dc56a3aeda3390617ccaf.setIcon(icon_d6eb4f2d413f81da89fad5f8ca03d9bd);
+        
+    
+        var popup_33c743596f9595e3bd7d14eda4dad5b9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2b30a6d98dbb87de5d497618bb3d07ba = $(`<div id="html_2b30a6d98dbb87de5d497618bb3d07ba" style="width: 100.0%; height: 100.0%;">AMBIGA INDUSTRIE, Material Handling Equipment Manufacturer.<br>Disturbing Factor: factory<br>Distance: 1247.61 m</div>`)[0];
+                popup_33c743596f9595e3bd7d14eda4dad5b9.setContent(html_2b30a6d98dbb87de5d497618bb3d07ba);
+            
+        
+
+        marker_8f459779ad1dc56a3aeda3390617ccaf.bindPopup(popup_33c743596f9595e3bd7d14eda4dad5b9)
+        ;
+
+        
+    
+    
+            var marker_3b80f7bf674a9fabc0ed4ea872486cba = L.marker(
+                [13.089103450000007, 80.14646879956345],
+                {}
+            ).addTo(map_f00843428f424a37a87662e8d3006fa9);
+        
+    
+            var icon_5253a880b6cfa1ea72387e48caf4231d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_3b80f7bf674a9fabc0ed4ea872486cba.setIcon(icon_5253a880b6cfa1ea72387e48caf4231d);
+        
+    
+        var popup_0e236c38e1a985139d3f0536dccc68b1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1eac67c77c7821555726b39693abeef6 = $(`<div id="html_1eac67c77c7821555726b39693abeef6" style="width: 100.0%; height: 100.0%;">Your Location</div>`)[0];
+                popup_0e236c38e1a985139d3f0536dccc68b1.setContent(html_1eac67c77c7821555726b39693abeef6);
+            
+        
+
+        marker_3b80f7bf674a9fabc0ed4ea872486cba.bindPopup(popup_0e236c38e1a985139d3f0536dccc68b1)
+        ;
+
+        
+    
+</script>
+</html>

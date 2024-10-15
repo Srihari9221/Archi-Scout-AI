@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_0eed814310b3c1acb7cae1d909efdd93 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_0eed814310b3c1acb7cae1d909efdd93" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_0eed814310b3c1acb7cae1d909efdd93 = L.map(
+                "map_0eed814310b3c1acb7cae1d909efdd93",
+                {
+                    center: [13.074507492395776, 80.1114155861864],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 16,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_6ef1bd46753fff2377a8cd7811776d92 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_6ef1bd46753fff2377a8cd7811776d92.addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var marker_ffd40f9c266e158c78f2f61e7321574d = L.marker(
+                [13.07871612625507, 80.11334682259067],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_40b796ba355479394044244f2ed2ff51 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(221.65528263765523deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_ffd40f9c266e158c78f2f61e7321574d.setIcon(div_icon_40b796ba355479394044244f2ed2ff51);
+        
+    
+        var popup_17fe12f73c030a2ded730cba3202c281 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4a3359de5564e971b0e41abf88c0c0c7 = $(`<div id="html_4a3359de5564e971b0e41abf88c0c0c7" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 10.01 m/s<br>Mean Wind Direction: 221.66°</div>`)[0];
+                popup_17fe12f73c030a2ded730cba3202c281.setContent(html_4a3359de5564e971b0e41abf88c0c0c7);
+            
+        
+
+        marker_ffd40f9c266e158c78f2f61e7321574d.bindPopup(popup_17fe12f73c030a2ded730cba3202c281)
+        ;
+
+        
+    
+    
+            var marker_24e3a18c98b632741761636807285367 = L.marker(
+                [13.075888820063595, 80.10856172831588],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_f76935b854fd34b577a26cd5bb6afff2 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(221.65528263765523deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_24e3a18c98b632741761636807285367.setIcon(div_icon_f76935b854fd34b577a26cd5bb6afff2);
+        
+    
+        var popup_cca24eb23423bcc86a2205d672ec8822 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cfccd06b85ddf15672c4fcccabbffc19 = $(`<div id="html_cfccd06b85ddf15672c4fcccabbffc19" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 10.01 m/s<br>Mean Wind Direction: 221.66°</div>`)[0];
+                popup_cca24eb23423bcc86a2205d672ec8822.setContent(html_cfccd06b85ddf15672c4fcccabbffc19);
+            
+        
+
+        marker_24e3a18c98b632741761636807285367.bindPopup(popup_cca24eb23423bcc86a2205d672ec8822)
+        ;
+
+        
+    
+    
+            var marker_e4aae0cea1c1948ed2b313da60c6b353 = L.marker(
+                [13.076823854092556, 80.11254959423361],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_50fdb400671a89fa1ec99ca659ac6b9b = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(221.65528263765523deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_e4aae0cea1c1948ed2b313da60c6b353.setIcon(div_icon_50fdb400671a89fa1ec99ca659ac6b9b);
+        
+    
+        var popup_88a18255666fc21cc6f362f17b5b9db1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e95f233d5fb1ae09ec9c7e66badb79a8 = $(`<div id="html_e95f233d5fb1ae09ec9c7e66badb79a8" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 10.01 m/s<br>Mean Wind Direction: 221.66°</div>`)[0];
+                popup_88a18255666fc21cc6f362f17b5b9db1.setContent(html_e95f233d5fb1ae09ec9c7e66badb79a8);
+            
+        
+
+        marker_e4aae0cea1c1948ed2b313da60c6b353.bindPopup(popup_88a18255666fc21cc6f362f17b5b9db1)
+        ;
+
+        
+    
+    
+            var marker_2c89c8068becb8880a72a0855c2c1210 = L.marker(
+                [13.078594474958468, 80.10761928228669],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_a3f094a05e258a8f0a8caa6b39128fc2 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(221.65528263765523deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_2c89c8068becb8880a72a0855c2c1210.setIcon(div_icon_a3f094a05e258a8f0a8caa6b39128fc2);
+        
+    
+        var popup_a6a34489446d534c1e0fdeb190fbb07b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ff0add1b6a8977351e1538f0c549e4fb = $(`<div id="html_ff0add1b6a8977351e1538f0c549e4fb" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 10.01 m/s<br>Mean Wind Direction: 221.66°</div>`)[0];
+                popup_a6a34489446d534c1e0fdeb190fbb07b.setContent(html_ff0add1b6a8977351e1538f0c549e4fb);
+            
+        
+
+        marker_2c89c8068becb8880a72a0855c2c1210.bindPopup(popup_a6a34489446d534c1e0fdeb190fbb07b)
+        ;
+
+        
+    
+    
+            var marker_799ccc649899aaec30d0b15875ac3438 = L.marker(
+                [13.079847644121156, 80.10888043743358],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_c231732349cff15bf1a76ab66bd6b6db = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(221.65528263765523deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_799ccc649899aaec30d0b15875ac3438.setIcon(div_icon_c231732349cff15bf1a76ab66bd6b6db);
+        
+    
+        var popup_ed1c4e40f448680a524e913b09a1fca6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6440d04218c5d06a0e4a6e3659604958 = $(`<div id="html_6440d04218c5d06a0e4a6e3659604958" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 10.01 m/s<br>Mean Wind Direction: 221.66°</div>`)[0];
+                popup_ed1c4e40f448680a524e913b09a1fca6.setContent(html_6440d04218c5d06a0e4a6e3659604958);
+            
+        
+
+        marker_799ccc649899aaec30d0b15875ac3438.bindPopup(popup_ed1c4e40f448680a524e913b09a1fca6)
+        ;
+
+        
+    
+    
+            var marker_3693284e8a975eccae2b7fc312295930 = L.marker(
+                [13.071801032499872, 80.11497915491275],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_9bd9f50f5bbb64cc01ab0ae9bae15bd2 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(222.85465476840454deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_3693284e8a975eccae2b7fc312295930.setIcon(div_icon_9bd9f50f5bbb64cc01ab0ae9bae15bd2);
+        
+    
+        var popup_2d80683cb7ed4afc4b1542f383a0e2e3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3844df437246ff1aa02d204194d0f9d0 = $(`<div id="html_3844df437246ff1aa02d204194d0f9d0" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 9.90 m/s<br>Mean Wind Direction: 222.85°</div>`)[0];
+                popup_2d80683cb7ed4afc4b1542f383a0e2e3.setContent(html_3844df437246ff1aa02d204194d0f9d0);
+            
+        
+
+        marker_3693284e8a975eccae2b7fc312295930.bindPopup(popup_2d80683cb7ed4afc4b1542f383a0e2e3)
+        ;
+
+        
+    
+    
+            var marker_9e03d2d32d6bc9c853acc19f824e269b = L.marker(
+                [13.07703877549028, 80.10341732446915],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_4d9215ba674d25d4515c83520b860a1a = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(221.65528263765523deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_9e03d2d32d6bc9c853acc19f824e269b.setIcon(div_icon_4d9215ba674d25d4515c83520b860a1a);
+        
+    
+        var popup_f656d3b19e7e539842d395f573966048 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b7447408234008207529594f9ef07f88 = $(`<div id="html_b7447408234008207529594f9ef07f88" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 10.01 m/s<br>Mean Wind Direction: 221.66°</div>`)[0];
+                popup_f656d3b19e7e539842d395f573966048.setContent(html_b7447408234008207529594f9ef07f88);
+            
+        
+
+        marker_9e03d2d32d6bc9c853acc19f824e269b.bindPopup(popup_f656d3b19e7e539842d395f573966048)
+        ;
+
+        
+    
+    
+            var marker_7799d0894542a7c3c365bf3c9a40a158 = L.marker(
+                [13.073209338202462, 80.10770366954293],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_28ce9b760ea45f3cb9767d48e6ec515d = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(222.85465476840454deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_7799d0894542a7c3c365bf3c9a40a158.setIcon(div_icon_28ce9b760ea45f3cb9767d48e6ec515d);
+        
+    
+        var popup_165024e3e1488205a946a27eb2d2c155 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fe3a71e47ec72c408a5ba33db1d41571 = $(`<div id="html_fe3a71e47ec72c408a5ba33db1d41571" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 9.90 m/s<br>Mean Wind Direction: 222.85°</div>`)[0];
+                popup_165024e3e1488205a946a27eb2d2c155.setContent(html_fe3a71e47ec72c408a5ba33db1d41571);
+            
+        
+
+        marker_7799d0894542a7c3c365bf3c9a40a158.bindPopup(popup_165024e3e1488205a946a27eb2d2c155)
+        ;
+
+        
+    
+    
+            var marker_68231663e03a6656db2a884ac6063d77 = L.marker(
+                [13.073943602303554, 80.11164848161941],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_24f47a0525ec3eae9498051f49c40504 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(222.85465476840454deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_68231663e03a6656db2a884ac6063d77.setIcon(div_icon_24f47a0525ec3eae9498051f49c40504);
+        
+    
+        var popup_9f226a182400719966edde8f6edd9061 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e8246eaea93434470e144fc0327a8c3a = $(`<div id="html_e8246eaea93434470e144fc0327a8c3a" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 9.90 m/s<br>Mean Wind Direction: 222.85°</div>`)[0];
+                popup_9f226a182400719966edde8f6edd9061.setContent(html_e8246eaea93434470e144fc0327a8c3a);
+            
+        
+
+        marker_68231663e03a6656db2a884ac6063d77.bindPopup(popup_9f226a182400719966edde8f6edd9061)
+        ;
+
+        
+    
+    
+            var marker_84f55fcaf288bd855c485249ff3f71ef = L.marker(
+                [13.076143538380853, 80.11163335299976],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_73396a8c643c7d537d09c2fc55089454 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(221.65528263765523deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_84f55fcaf288bd855c485249ff3f71ef.setIcon(div_icon_73396a8c643c7d537d09c2fc55089454);
+        
+    
+        var popup_b3a8ec20429a6a0cbaa32bcc209c2e91 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3a70582e8337e7418ed7f561683adb61 = $(`<div id="html_3a70582e8337e7418ed7f561683adb61" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 10.01 m/s<br>Mean Wind Direction: 221.66°</div>`)[0];
+                popup_b3a8ec20429a6a0cbaa32bcc209c2e91.setContent(html_3a70582e8337e7418ed7f561683adb61);
+            
+        
+
+        marker_84f55fcaf288bd855c485249ff3f71ef.bindPopup(popup_b3a8ec20429a6a0cbaa32bcc209c2e91)
+        ;
+
+        
+    
+    
+            var marker_9870812725df9a460b94173e1023f892 = L.marker(
+                [13.074497336635988, 80.10903176317045],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_5e2468f71a6b2e197ee8524bf933663d = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(222.85465476840454deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_9870812725df9a460b94173e1023f892.setIcon(div_icon_5e2468f71a6b2e197ee8524bf933663d);
+        
+    
+        var popup_a87c1921bce25788751c31d9ac7c8725 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3b150f13e151a3ab776547daaf7bf500 = $(`<div id="html_3b150f13e151a3ab776547daaf7bf500" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 9.90 m/s<br>Mean Wind Direction: 222.85°</div>`)[0];
+                popup_a87c1921bce25788751c31d9ac7c8725.setContent(html_3b150f13e151a3ab776547daaf7bf500);
+            
+        
+
+        marker_9870812725df9a460b94173e1023f892.bindPopup(popup_a87c1921bce25788751c31d9ac7c8725)
+        ;
+
+        
+    
+    
+            var marker_62ec81677da320b5515337ce311295da = L.marker(
+                [13.07419007150274, 80.11138277969269],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_80f504968cdd7f8bd19854de724d0a87 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(222.85465476840454deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_62ec81677da320b5515337ce311295da.setIcon(div_icon_80f504968cdd7f8bd19854de724d0a87);
+        
+    
+        var popup_bffa4cb74bc43474d7da103bc031aa29 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8ebd530fe894133620b5a7f0076bc48c = $(`<div id="html_8ebd530fe894133620b5a7f0076bc48c" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 9.90 m/s<br>Mean Wind Direction: 222.85°</div>`)[0];
+                popup_bffa4cb74bc43474d7da103bc031aa29.setContent(html_8ebd530fe894133620b5a7f0076bc48c);
+            
+        
+
+        marker_62ec81677da320b5515337ce311295da.bindPopup(popup_bffa4cb74bc43474d7da103bc031aa29)
+        ;
+
+        
+    
+    
+            var marker_a69dafdd31bcc5d568e835ee4a7bcfa5 = L.marker(
+                [13.073841123753589, 80.1105724866893],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_ca5b46d1ec937febf63106f83e927f8e = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(222.85465476840454deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_a69dafdd31bcc5d568e835ee4a7bcfa5.setIcon(div_icon_ca5b46d1ec937febf63106f83e927f8e);
+        
+    
+        var popup_4ea5e010ffa8f76f1d69c0af5ec593fa = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8182a7aeda4ae66c80dca7d6f75f6a0f = $(`<div id="html_8182a7aeda4ae66c80dca7d6f75f6a0f" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 9.90 m/s<br>Mean Wind Direction: 222.85°</div>`)[0];
+                popup_4ea5e010ffa8f76f1d69c0af5ec593fa.setContent(html_8182a7aeda4ae66c80dca7d6f75f6a0f);
+            
+        
+
+        marker_a69dafdd31bcc5d568e835ee4a7bcfa5.bindPopup(popup_4ea5e010ffa8f76f1d69c0af5ec593fa)
+        ;
+
+        
+    
+    
+            var marker_6b0837270cc1029384713f0fb1835f7a = L.marker(
+                [13.072077620577032, 80.11282289470891],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_3166bcc59a9747cf2f0051520bfed146 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(222.85465476840454deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_6b0837270cc1029384713f0fb1835f7a.setIcon(div_icon_3166bcc59a9747cf2f0051520bfed146);
+        
+    
+        var popup_07ae5f924ab68dcb51d4040481255a4d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_882a0a47212b3a87c71b624d4093831b = $(`<div id="html_882a0a47212b3a87c71b624d4093831b" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 9.90 m/s<br>Mean Wind Direction: 222.85°</div>`)[0];
+                popup_07ae5f924ab68dcb51d4040481255a4d.setContent(html_882a0a47212b3a87c71b624d4093831b);
+            
+        
+
+        marker_6b0837270cc1029384713f0fb1835f7a.bindPopup(popup_07ae5f924ab68dcb51d4040481255a4d)
+        ;
+
+        
+    
+    
+            var marker_1c7f4dafad2cf8f28581e82be6ef3f0d = L.marker(
+                [13.082264554506416, 80.10790562180658],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_42eab2826392ad1674679c5ce81f0552 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(221.65528263765523deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_1c7f4dafad2cf8f28581e82be6ef3f0d.setIcon(div_icon_42eab2826392ad1674679c5ce81f0552);
+        
+    
+        var popup_9576e1b6834315b170117e81c2a717cb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b520fa70daaf891d80a922730e94846e = $(`<div id="html_b520fa70daaf891d80a922730e94846e" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 10.01 m/s<br>Mean Wind Direction: 221.66°</div>`)[0];
+                popup_9576e1b6834315b170117e81c2a717cb.setContent(html_b520fa70daaf891d80a922730e94846e);
+            
+        
+
+        marker_1c7f4dafad2cf8f28581e82be6ef3f0d.bindPopup(popup_9576e1b6834315b170117e81c2a717cb)
+        ;
+
+        
+    
+    
+            var marker_6a7bf88377cc8132bb6b36640babfd91 = L.marker(
+                [13.077710818982569, 80.11476833557565],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_3689e8fbe41f5538ccbd395873c72202 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(221.65528263765523deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_6a7bf88377cc8132bb6b36640babfd91.setIcon(div_icon_3689e8fbe41f5538ccbd395873c72202);
+        
+    
+        var popup_cd86d01e86594da3ff3f16806b95ee13 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0f6825ff56e1a09782ff2c4fe7fecebc = $(`<div id="html_0f6825ff56e1a09782ff2c4fe7fecebc" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 10.01 m/s<br>Mean Wind Direction: 221.66°</div>`)[0];
+                popup_cd86d01e86594da3ff3f16806b95ee13.setContent(html_0f6825ff56e1a09782ff2c4fe7fecebc);
+            
+        
+
+        marker_6a7bf88377cc8132bb6b36640babfd91.bindPopup(popup_cd86d01e86594da3ff3f16806b95ee13)
+        ;
+
+        
+    
+    
+            var marker_028d62292cf666a9e96c7637f247216e = L.marker(
+                [13.072129732043617, 80.11419518872523],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_f293b56a65f46ef4848786503b77f91f = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(222.85465476840454deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_028d62292cf666a9e96c7637f247216e.setIcon(div_icon_f293b56a65f46ef4848786503b77f91f);
+        
+    
+        var popup_3ee1fa1caff751691c19a1385eb20e95 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0928ee929b970cedf1b78441cbaa3e8f = $(`<div id="html_0928ee929b970cedf1b78441cbaa3e8f" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 9.90 m/s<br>Mean Wind Direction: 222.85°</div>`)[0];
+                popup_3ee1fa1caff751691c19a1385eb20e95.setContent(html_0928ee929b970cedf1b78441cbaa3e8f);
+            
+        
+
+        marker_028d62292cf666a9e96c7637f247216e.bindPopup(popup_3ee1fa1caff751691c19a1385eb20e95)
+        ;
+
+        
+    
+    
+            var marker_19b10706eed16c2d449393d9af11fb44 = L.marker(
+                [13.08228663927725, 80.10707469231862],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_51361776a0d1b716500c7578887d743e = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(221.65528263765523deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_19b10706eed16c2d449393d9af11fb44.setIcon(div_icon_51361776a0d1b716500c7578887d743e);
+        
+    
+        var popup_d2327ddbce643fc4efe1355fa76e8bf8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_821e530771d3b7787539b7f584dce00e = $(`<div id="html_821e530771d3b7787539b7f584dce00e" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 10.01 m/s<br>Mean Wind Direction: 221.66°</div>`)[0];
+                popup_d2327ddbce643fc4efe1355fa76e8bf8.setContent(html_821e530771d3b7787539b7f584dce00e);
+            
+        
+
+        marker_19b10706eed16c2d449393d9af11fb44.bindPopup(popup_d2327ddbce643fc4efe1355fa76e8bf8)
+        ;
+
+        
+    
+    
+            var marker_fbd884274c7e9c8f6bb88b667529f5c8 = L.marker(
+                [13.07125929342863, 80.11529169929351],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_6b51f784740948a2df8bbc114dcbd7c3 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(222.85465476840454deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_fbd884274c7e9c8f6bb88b667529f5c8.setIcon(div_icon_6b51f784740948a2df8bbc114dcbd7c3);
+        
+    
+        var popup_cb17cc6bc25c27836667f803fdddcd6d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1c345ef71be334ac5b6beda6a0957959 = $(`<div id="html_1c345ef71be334ac5b6beda6a0957959" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 9.90 m/s<br>Mean Wind Direction: 222.85°</div>`)[0];
+                popup_cb17cc6bc25c27836667f803fdddcd6d.setContent(html_1c345ef71be334ac5b6beda6a0957959);
+            
+        
+
+        marker_fbd884274c7e9c8f6bb88b667529f5c8.bindPopup(popup_cb17cc6bc25c27836667f803fdddcd6d)
+        ;
+
+        
+    
+    
+            var marker_86d9b6dbcdd6d8b12a6c940d4b814077 = L.marker(
+                [13.080176916665781, 80.11789513089754],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_eba8656f0bb9fe7e67166a4af572c6bb = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(221.65528263765523deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_86d9b6dbcdd6d8b12a6c940d4b814077.setIcon(div_icon_eba8656f0bb9fe7e67166a4af572c6bb);
+        
+    
+        var popup_49b20e6b45245b741f7c9237a556d441 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_21d65cbe40e346bf8847db6ab2db21a8 = $(`<div id="html_21d65cbe40e346bf8847db6ab2db21a8" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 10.01 m/s<br>Mean Wind Direction: 221.66°</div>`)[0];
+                popup_49b20e6b45245b741f7c9237a556d441.setContent(html_21d65cbe40e346bf8847db6ab2db21a8);
+            
+        
+
+        marker_86d9b6dbcdd6d8b12a6c940d4b814077.bindPopup(popup_49b20e6b45245b741f7c9237a556d441)
+        ;
+
+        
+    
+    
+            var marker_7f895ae1dafac334165d1068c027cf74 = L.marker(
+                [13.071595295445459, 80.1194640281106],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_dca698e5857b189e6d8e4aa36e848037 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(222.85465476840454deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_7f895ae1dafac334165d1068c027cf74.setIcon(div_icon_dca698e5857b189e6d8e4aa36e848037);
+        
+    
+        var popup_2da3f72c7452f3379ce620bb8a6f9317 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_dd0a933a738d9a309795902209200db7 = $(`<div id="html_dd0a933a738d9a309795902209200db7" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 9.90 m/s<br>Mean Wind Direction: 222.85°</div>`)[0];
+                popup_2da3f72c7452f3379ce620bb8a6f9317.setContent(html_dd0a933a738d9a309795902209200db7);
+            
+        
+
+        marker_7f895ae1dafac334165d1068c027cf74.bindPopup(popup_2da3f72c7452f3379ce620bb8a6f9317)
+        ;
+
+        
+    
+    
+            var marker_5a06415dcb8d46065e03b336a6ca982f = L.marker(
+                [13.077263160662826, 80.11613377304404],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_927a1a2080ed3b6b48f231299382d69e = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(221.65528263765523deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_5a06415dcb8d46065e03b336a6ca982f.setIcon(div_icon_927a1a2080ed3b6b48f231299382d69e);
+        
+    
+        var popup_77172de11afc4796b7079de6b344a5d7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_569ccbe3b4a0856dbfc4d1fe0ce463ef = $(`<div id="html_569ccbe3b4a0856dbfc4d1fe0ce463ef" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 10.01 m/s<br>Mean Wind Direction: 221.66°</div>`)[0];
+                popup_77172de11afc4796b7079de6b344a5d7.setContent(html_569ccbe3b4a0856dbfc4d1fe0ce463ef);
+            
+        
+
+        marker_5a06415dcb8d46065e03b336a6ca982f.bindPopup(popup_77172de11afc4796b7079de6b344a5d7)
+        ;
+
+        
+    
+    
+            var marker_4b171f12d77bf90ca295e3e6333073aa = L.marker(
+                [13.080783648639995, 80.11180690912366],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_a81c3e2443ce10928665d3f0ec2d73f3 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(221.65528263765523deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_4b171f12d77bf90ca295e3e6333073aa.setIcon(div_icon_a81c3e2443ce10928665d3f0ec2d73f3);
+        
+    
+        var popup_d2e2c70a03bb309a7464b469934e4f40 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_59cdfb8982816ce1f7888e41fbcd5c98 = $(`<div id="html_59cdfb8982816ce1f7888e41fbcd5c98" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 10.01 m/s<br>Mean Wind Direction: 221.66°</div>`)[0];
+                popup_d2e2c70a03bb309a7464b469934e4f40.setContent(html_59cdfb8982816ce1f7888e41fbcd5c98);
+            
+        
+
+        marker_4b171f12d77bf90ca295e3e6333073aa.bindPopup(popup_d2e2c70a03bb309a7464b469934e4f40)
+        ;
+
+        
+    
+    
+            var marker_6e038197a69b5d2f3cbd8f2f4a7c3d2d = L.marker(
+                [13.067204826686991, 80.11103223224264],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_acae757ea3bf628464df878aabfe3795 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(222.85465476840454deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_6e038197a69b5d2f3cbd8f2f4a7c3d2d.setIcon(div_icon_acae757ea3bf628464df878aabfe3795);
+        
+    
+        var popup_96a8769c8e3c796812d6b428345a45c5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bacbf72a276263a009b586540d1319a5 = $(`<div id="html_bacbf72a276263a009b586540d1319a5" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 9.90 m/s<br>Mean Wind Direction: 222.85°</div>`)[0];
+                popup_96a8769c8e3c796812d6b428345a45c5.setContent(html_bacbf72a276263a009b586540d1319a5);
+            
+        
+
+        marker_6e038197a69b5d2f3cbd8f2f4a7c3d2d.bindPopup(popup_96a8769c8e3c796812d6b428345a45c5)
+        ;
+
+        
+    
+    
+            var marker_d3ee6230b6becf24bfb3b9b2e09d6584 = L.marker(
+                [13.074339924777204, 80.10602416474632],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_459365992774f52b32d96019c9044880 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(222.85465476840454deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_d3ee6230b6becf24bfb3b9b2e09d6584.setIcon(div_icon_459365992774f52b32d96019c9044880);
+        
+    
+        var popup_53aefa078cd7a1642488491f1f31b23d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a8975c7dd42ffc8246aefdc059269faa = $(`<div id="html_a8975c7dd42ffc8246aefdc059269faa" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 9.90 m/s<br>Mean Wind Direction: 222.85°</div>`)[0];
+                popup_53aefa078cd7a1642488491f1f31b23d.setContent(html_a8975c7dd42ffc8246aefdc059269faa);
+            
+        
+
+        marker_d3ee6230b6becf24bfb3b9b2e09d6584.bindPopup(popup_53aefa078cd7a1642488491f1f31b23d)
+        ;
+
+        
+    
+    
+            var marker_45a6de3366513fa8f90170c11ec869c9 = L.marker(
+                [13.071764500477233, 80.1158730426751],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_9fc57bf2390cb45cec705b3630e60f54 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(222.85465476840454deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_45a6de3366513fa8f90170c11ec869c9.setIcon(div_icon_9fc57bf2390cb45cec705b3630e60f54);
+        
+    
+        var popup_9b0d57f41db71b01f9a56e05921646c3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a197a7e93c09f40acbcd0068a110b4b7 = $(`<div id="html_a197a7e93c09f40acbcd0068a110b4b7" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 9.90 m/s<br>Mean Wind Direction: 222.85°</div>`)[0];
+                popup_9b0d57f41db71b01f9a56e05921646c3.setContent(html_a197a7e93c09f40acbcd0068a110b4b7);
+            
+        
+
+        marker_45a6de3366513fa8f90170c11ec869c9.bindPopup(popup_9b0d57f41db71b01f9a56e05921646c3)
+        ;
+
+        
+    
+    
+            var marker_b3c9ff4a7f50b6ff3e70805238ea73ef = L.marker(
+                [13.080464501629042, 80.1121560999844],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_41781ebffd0273e1e44cc6455ff19f86 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(221.65528263765523deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_b3c9ff4a7f50b6ff3e70805238ea73ef.setIcon(div_icon_41781ebffd0273e1e44cc6455ff19f86);
+        
+    
+        var popup_8de85b4b16bbbc2e17e665613cb8b14c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_02fab2b38f2d6a4f4dfc8f6a640b1c18 = $(`<div id="html_02fab2b38f2d6a4f4dfc8f6a640b1c18" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 10.01 m/s<br>Mean Wind Direction: 221.66°</div>`)[0];
+                popup_8de85b4b16bbbc2e17e665613cb8b14c.setContent(html_02fab2b38f2d6a4f4dfc8f6a640b1c18);
+            
+        
+
+        marker_b3c9ff4a7f50b6ff3e70805238ea73ef.bindPopup(popup_8de85b4b16bbbc2e17e665613cb8b14c)
+        ;
+
+        
+    
+    
+            var marker_58be8ea6c95fb9796e14f355892e95f0 = L.marker(
+                [13.079097190839738, 80.11647365700976],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_07ea69d5ccbaa4d11b8dae328ef255d4 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(221.65528263765523deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_58be8ea6c95fb9796e14f355892e95f0.setIcon(div_icon_07ea69d5ccbaa4d11b8dae328ef255d4);
+        
+    
+        var popup_5d18683d83b5438d09ec5c37f73bc15d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_830b77198e414a1d5afb660098675ee0 = $(`<div id="html_830b77198e414a1d5afb660098675ee0" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 10.01 m/s<br>Mean Wind Direction: 221.66°</div>`)[0];
+                popup_5d18683d83b5438d09ec5c37f73bc15d.setContent(html_830b77198e414a1d5afb660098675ee0);
+            
+        
+
+        marker_58be8ea6c95fb9796e14f355892e95f0.bindPopup(popup_5d18683d83b5438d09ec5c37f73bc15d)
+        ;
+
+        
+    
+    
+            var marker_f3b6e5d9609d6488501736a7e648d520 = L.marker(
+                [13.079769924198215, 80.11393634860696],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_92e2e685460af4e1e170193264dacf5c = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(221.65528263765523deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_f3b6e5d9609d6488501736a7e648d520.setIcon(div_icon_92e2e685460af4e1e170193264dacf5c);
+        
+    
+        var popup_bf8b8541ae9f0fcfd32d0280e652f9e2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9e1cfe36241772f69bd5e0931fc0f47b = $(`<div id="html_9e1cfe36241772f69bd5e0931fc0f47b" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 10.01 m/s<br>Mean Wind Direction: 221.66°</div>`)[0];
+                popup_bf8b8541ae9f0fcfd32d0280e652f9e2.setContent(html_9e1cfe36241772f69bd5e0931fc0f47b);
+            
+        
+
+        marker_f3b6e5d9609d6488501736a7e648d520.bindPopup(popup_bf8b8541ae9f0fcfd32d0280e652f9e2)
+        ;
+
+        
+    
+    
+            var marker_e326cf92a26a32a5cdff60417eeaf129 = L.marker(
+                [13.078988580048826, 80.1120527055022],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_052f29ed17e6b136c14ff6b7e17f7d56 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(221.65528263765523deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_e326cf92a26a32a5cdff60417eeaf129.setIcon(div_icon_052f29ed17e6b136c14ff6b7e17f7d56);
+        
+    
+        var popup_9a76c06e10fae163571490afbeb7a02a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_69791fa45f612adcf0c8841031545cb5 = $(`<div id="html_69791fa45f612adcf0c8841031545cb5" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 10.01 m/s<br>Mean Wind Direction: 221.66°</div>`)[0];
+                popup_9a76c06e10fae163571490afbeb7a02a.setContent(html_69791fa45f612adcf0c8841031545cb5);
+            
+        
+
+        marker_e326cf92a26a32a5cdff60417eeaf129.bindPopup(popup_9a76c06e10fae163571490afbeb7a02a)
+        ;
+
+        
+    
+    
+            var marker_9bc73da50335b2680da9e75f39f788c1 = L.marker(
+                [13.067250323908885, 80.1127900682359],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_6b382a44401ccaed41f9d85fce01f348 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(222.85465476840454deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_9bc73da50335b2680da9e75f39f788c1.setIcon(div_icon_6b382a44401ccaed41f9d85fce01f348);
+        
+    
+        var popup_7b87b403f2d33c76a1ee21b5af539efd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_67cbc09adc98080fdb8f48e33c170fcd = $(`<div id="html_67cbc09adc98080fdb8f48e33c170fcd" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 9.90 m/s<br>Mean Wind Direction: 222.85°</div>`)[0];
+                popup_7b87b403f2d33c76a1ee21b5af539efd.setContent(html_67cbc09adc98080fdb8f48e33c170fcd);
+            
+        
+
+        marker_9bc73da50335b2680da9e75f39f788c1.bindPopup(popup_7b87b403f2d33c76a1ee21b5af539efd)
+        ;
+
+        
+    
+    
+            var marker_8c120f8987a40540c91f35152a5b24ca = L.marker(
+                [13.074524544415315, 80.11145466576205],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_eb73e3cf8980506f1b411143fe9f5224 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(222.85465476840454deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_8c120f8987a40540c91f35152a5b24ca.setIcon(div_icon_eb73e3cf8980506f1b411143fe9f5224);
+        
+    
+        var popup_401764304257eee04fde19d91a6fd507 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b2aa6ae353dbbd1006ec6591680e1e91 = $(`<div id="html_b2aa6ae353dbbd1006ec6591680e1e91" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 9.90 m/s<br>Mean Wind Direction: 222.85°</div>`)[0];
+                popup_401764304257eee04fde19d91a6fd507.setContent(html_b2aa6ae353dbbd1006ec6591680e1e91);
+            
+        
+
+        marker_8c120f8987a40540c91f35152a5b24ca.bindPopup(popup_401764304257eee04fde19d91a6fd507)
+        ;
+
+        
+    
+    
+            var marker_bccd5523292cd8635f909fcde3158335 = L.marker(
+                [13.06669119260018, 80.10948109326809],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_9e1357bfdcd4c955badfc8eba2bb636a = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(222.85465476840454deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_bccd5523292cd8635f909fcde3158335.setIcon(div_icon_9e1357bfdcd4c955badfc8eba2bb636a);
+        
+    
+        var popup_dcc2dc01136546ed96e631ddf8ca8f9c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4f4333c30e20396d9b807faf10b21502 = $(`<div id="html_4f4333c30e20396d9b807faf10b21502" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 9.90 m/s<br>Mean Wind Direction: 222.85°</div>`)[0];
+                popup_dcc2dc01136546ed96e631ddf8ca8f9c.setContent(html_4f4333c30e20396d9b807faf10b21502);
+            
+        
+
+        marker_bccd5523292cd8635f909fcde3158335.bindPopup(popup_dcc2dc01136546ed96e631ddf8ca8f9c)
+        ;
+
+        
+    
+    
+            var marker_7b4dd896f6e64643a02bbc8acf4c59a8 = L.marker(
+                [13.082577604409709, 80.11298655841048],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_ebf7a5dcd934c11d9deda48e7b5ec8e4 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(221.65528263765523deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_7b4dd896f6e64643a02bbc8acf4c59a8.setIcon(div_icon_ebf7a5dcd934c11d9deda48e7b5ec8e4);
+        
+    
+        var popup_614a89833116275026ae81b43f37e5e9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_225ed30a9e81abf039d99c61d753d416 = $(`<div id="html_225ed30a9e81abf039d99c61d753d416" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 10.01 m/s<br>Mean Wind Direction: 221.66°</div>`)[0];
+                popup_614a89833116275026ae81b43f37e5e9.setContent(html_225ed30a9e81abf039d99c61d753d416);
+            
+        
+
+        marker_7b4dd896f6e64643a02bbc8acf4c59a8.bindPopup(popup_614a89833116275026ae81b43f37e5e9)
+        ;
+
+        
+    
+    
+            var marker_db756efaa9e062694baef26854d85842 = L.marker(
+                [13.080939399009928, 80.11026066507523],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_df6a2139cae29dadb722e7f3fcfddd76 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(221.65528263765523deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_db756efaa9e062694baef26854d85842.setIcon(div_icon_df6a2139cae29dadb722e7f3fcfddd76);
+        
+    
+        var popup_e9a7fb99995891fa8674701fae96a4b2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ced7628080a60f4b084ce9c83706614f = $(`<div id="html_ced7628080a60f4b084ce9c83706614f" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 10.01 m/s<br>Mean Wind Direction: 221.66°</div>`)[0];
+                popup_e9a7fb99995891fa8674701fae96a4b2.setContent(html_ced7628080a60f4b084ce9c83706614f);
+            
+        
+
+        marker_db756efaa9e062694baef26854d85842.bindPopup(popup_e9a7fb99995891fa8674701fae96a4b2)
+        ;
+
+        
+    
+    
+            var marker_651c97540ad4e7e28365a4125ba817ab = L.marker(
+                [13.074975840355041, 80.1123444149865],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_97a1ace14a6e1e7e3275c7fb68948e15 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(222.85465476840454deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_651c97540ad4e7e28365a4125ba817ab.setIcon(div_icon_97a1ace14a6e1e7e3275c7fb68948e15);
+        
+    
+        var popup_dbc9b5b814b0782deaf1896b9720dd7b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b0f46a824ab4d186dd35c303c461243c = $(`<div id="html_b0f46a824ab4d186dd35c303c461243c" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 9.90 m/s<br>Mean Wind Direction: 222.85°</div>`)[0];
+                popup_dbc9b5b814b0782deaf1896b9720dd7b.setContent(html_b0f46a824ab4d186dd35c303c461243c);
+            
+        
+
+        marker_651c97540ad4e7e28365a4125ba817ab.bindPopup(popup_dbc9b5b814b0782deaf1896b9720dd7b)
+        ;
+
+        
+    
+    
+            var marker_bd6f7558ee5caed703e69134556e27a4 = L.marker(
+                [13.076450633898654, 80.11015480784403],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_006551d0c919254c5ee25b0cec276814 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(221.65528263765523deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_bd6f7558ee5caed703e69134556e27a4.setIcon(div_icon_006551d0c919254c5ee25b0cec276814);
+        
+    
+        var popup_a4825be444bfd3915b571e6069b266be = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a7c3eb80f6d863deaf9d92de635fa1c5 = $(`<div id="html_a7c3eb80f6d863deaf9d92de635fa1c5" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 10.01 m/s<br>Mean Wind Direction: 221.66°</div>`)[0];
+                popup_a4825be444bfd3915b571e6069b266be.setContent(html_a7c3eb80f6d863deaf9d92de635fa1c5);
+            
+        
+
+        marker_bd6f7558ee5caed703e69134556e27a4.bindPopup(popup_a4825be444bfd3915b571e6069b266be)
+        ;
+
+        
+    
+    
+            var marker_8a1ddc9a510d38092a27fd1cb1a7677e = L.marker(
+                [13.07370824976161, 80.11653400820006],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_fe439ed584a6fd9bea997afead520570 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(222.85465476840454deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_8a1ddc9a510d38092a27fd1cb1a7677e.setIcon(div_icon_fe439ed584a6fd9bea997afead520570);
+        
+    
+        var popup_265eb7e31dcce675bf77598bca267746 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_69197a636f361a890bc204082f418fb3 = $(`<div id="html_69197a636f361a890bc204082f418fb3" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 9.90 m/s<br>Mean Wind Direction: 222.85°</div>`)[0];
+                popup_265eb7e31dcce675bf77598bca267746.setContent(html_69197a636f361a890bc204082f418fb3);
+            
+        
+
+        marker_8a1ddc9a510d38092a27fd1cb1a7677e.bindPopup(popup_265eb7e31dcce675bf77598bca267746)
+        ;
+
+        
+    
+    
+            var marker_19607110c12e153e4f0771bbf8e89f8f = L.marker(
+                [13.070052285163339, 80.10866489722599],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_4546c12f6df16287ce30fcd6b781f7d7 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(222.85465476840454deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_19607110c12e153e4f0771bbf8e89f8f.setIcon(div_icon_4546c12f6df16287ce30fcd6b781f7d7);
+        
+    
+        var popup_63a5f8048e02524c9282dfd06ca0ff2b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7389a392f546d606bc1cbb5634d23265 = $(`<div id="html_7389a392f546d606bc1cbb5634d23265" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 9.90 m/s<br>Mean Wind Direction: 222.85°</div>`)[0];
+                popup_63a5f8048e02524c9282dfd06ca0ff2b.setContent(html_7389a392f546d606bc1cbb5634d23265);
+            
+        
+
+        marker_19607110c12e153e4f0771bbf8e89f8f.bindPopup(popup_63a5f8048e02524c9282dfd06ca0ff2b)
+        ;
+
+        
+    
+    
+            var marker_d64380598cf0f80bf85986decb18fe34 = L.marker(
+                [13.073101386637537, 80.1124891886452],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_a090bb3b8ed9303d127089ebf15e72ea = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(222.85465476840454deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_d64380598cf0f80bf85986decb18fe34.setIcon(div_icon_a090bb3b8ed9303d127089ebf15e72ea);
+        
+    
+        var popup_ae393ab1ff016ff377ac192c335c8f79 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e2c2de4e4bb9a9ecb0bcfe0433c37267 = $(`<div id="html_e2c2de4e4bb9a9ecb0bcfe0433c37267" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 9.90 m/s<br>Mean Wind Direction: 222.85°</div>`)[0];
+                popup_ae393ab1ff016ff377ac192c335c8f79.setContent(html_e2c2de4e4bb9a9ecb0bcfe0433c37267);
+            
+        
+
+        marker_d64380598cf0f80bf85986decb18fe34.bindPopup(popup_ae393ab1ff016ff377ac192c335c8f79)
+        ;
+
+        
+    
+    
+            var marker_07bb0932d739a108563d011df76182f2 = L.marker(
+                [13.074246334086947, 80.11127695629278],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_c06c102c141ddec966d033708139bc88 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(222.85465476840454deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_07bb0932d739a108563d011df76182f2.setIcon(div_icon_c06c102c141ddec966d033708139bc88);
+        
+    
+        var popup_c801b5c2d74545de5e5fbc66e8dd22d1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a7f91889806c2551cdad19cd98280a30 = $(`<div id="html_a7f91889806c2551cdad19cd98280a30" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 9.90 m/s<br>Mean Wind Direction: 222.85°</div>`)[0];
+                popup_c801b5c2d74545de5e5fbc66e8dd22d1.setContent(html_a7f91889806c2551cdad19cd98280a30);
+            
+        
+
+        marker_07bb0932d739a108563d011df76182f2.bindPopup(popup_c801b5c2d74545de5e5fbc66e8dd22d1)
+        ;
+
+        
+    
+    
+            var marker_46e2c6d5e3490fcd67b75e8a473ea7e9 = L.marker(
+                [13.074507492395776, 80.1114155861864],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_821d64d0fac77ed2e0291ebc6776000a = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(222.85465476840454deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_46e2c6d5e3490fcd67b75e8a473ea7e9.setIcon(div_icon_821d64d0fac77ed2e0291ebc6776000a);
+        
+    
+        var popup_578cdd403c134f3aab16eb15c7ab2a40 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_839d34234e58ad498aeee9660b35213c = $(`<div id="html_839d34234e58ad498aeee9660b35213c" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 9.90 m/s<br>Mean Wind Direction: 222.85°</div>`)[0];
+                popup_578cdd403c134f3aab16eb15c7ab2a40.setContent(html_839d34234e58ad498aeee9660b35213c);
+            
+        
+
+        marker_46e2c6d5e3490fcd67b75e8a473ea7e9.bindPopup(popup_578cdd403c134f3aab16eb15c7ab2a40)
+        ;
+
+        
+    
+    
+            var marker_feb99a5be14bdaccf5dee5731946452c = L.marker(
+                [13.075717752758903, 80.113094382932],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_2c26b484bae1b17b66b5c873a9df3978 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(221.65528263765523deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_feb99a5be14bdaccf5dee5731946452c.setIcon(div_icon_2c26b484bae1b17b66b5c873a9df3978);
+        
+    
+        var popup_9f595738c550ae0727ba9c2852e74a00 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ea12b2c76ee2c62cc5c91e4f6170a4bd = $(`<div id="html_ea12b2c76ee2c62cc5c91e4f6170a4bd" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 10.01 m/s<br>Mean Wind Direction: 221.66°</div>`)[0];
+                popup_9f595738c550ae0727ba9c2852e74a00.setContent(html_ea12b2c76ee2c62cc5c91e4f6170a4bd);
+            
+        
+
+        marker_feb99a5be14bdaccf5dee5731946452c.bindPopup(popup_9f595738c550ae0727ba9c2852e74a00)
+        ;
+
+        
+    
+    
+            var marker_6cac67c33816b85030b32091153ad2ca = L.marker(
+                [13.068998935762792, 80.10568268162969],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_b561641d41b93f8ca17bd3189dd041b9 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(222.85465476840454deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_6cac67c33816b85030b32091153ad2ca.setIcon(div_icon_b561641d41b93f8ca17bd3189dd041b9);
+        
+    
+        var popup_4ef3a0d15ef38146c9eabdeb46f7f79d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_21fdcb5ae313ccba830932977d0a5e25 = $(`<div id="html_21fdcb5ae313ccba830932977d0a5e25" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 9.90 m/s<br>Mean Wind Direction: 222.85°</div>`)[0];
+                popup_4ef3a0d15ef38146c9eabdeb46f7f79d.setContent(html_21fdcb5ae313ccba830932977d0a5e25);
+            
+        
+
+        marker_6cac67c33816b85030b32091153ad2ca.bindPopup(popup_4ef3a0d15ef38146c9eabdeb46f7f79d)
+        ;
+
+        
+    
+    
+            var marker_b18acf6f1f4ad43a642890e2e87fce5b = L.marker(
+                [13.077712496568376, 80.11991189871124],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_17222ac747528ffa00935466835d25b0 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(221.65528263765523deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_b18acf6f1f4ad43a642890e2e87fce5b.setIcon(div_icon_17222ac747528ffa00935466835d25b0);
+        
+    
+        var popup_388fc3369a1878124e189ee90d5a35ed = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3c140ec2e677f3be933c4a1b63c0c487 = $(`<div id="html_3c140ec2e677f3be933c4a1b63c0c487" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 10.01 m/s<br>Mean Wind Direction: 221.66°</div>`)[0];
+                popup_388fc3369a1878124e189ee90d5a35ed.setContent(html_3c140ec2e677f3be933c4a1b63c0c487);
+            
+        
+
+        marker_b18acf6f1f4ad43a642890e2e87fce5b.bindPopup(popup_388fc3369a1878124e189ee90d5a35ed)
+        ;
+
+        
+    
+    
+            var marker_60f15481537c79fd071bc47f06b3580c = L.marker(
+                [13.072165260094797, 80.1090072793737],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_7ced1c93011d8e5606cd210f3162b45c = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(222.85465476840454deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_60f15481537c79fd071bc47f06b3580c.setIcon(div_icon_7ced1c93011d8e5606cd210f3162b45c);
+        
+    
+        var popup_586a49fd72ecebd543364a819271947c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_98fda66f389b6b6fa84eeab59babbe21 = $(`<div id="html_98fda66f389b6b6fa84eeab59babbe21" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 9.90 m/s<br>Mean Wind Direction: 222.85°</div>`)[0];
+                popup_586a49fd72ecebd543364a819271947c.setContent(html_98fda66f389b6b6fa84eeab59babbe21);
+            
+        
+
+        marker_60f15481537c79fd071bc47f06b3580c.bindPopup(popup_586a49fd72ecebd543364a819271947c)
+        ;
+
+        
+    
+    
+            var marker_89ab0d4ea8b459a3e1ca8f18ff6ec082 = L.marker(
+                [13.071483331829654, 80.11649274081545],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_4965ba2c0f4f8276d3b7b8d574a31014 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(222.85465476840454deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_89ab0d4ea8b459a3e1ca8f18ff6ec082.setIcon(div_icon_4965ba2c0f4f8276d3b7b8d574a31014);
+        
+    
+        var popup_bdf20818eaa8cddcbe06c3d20291c520 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_75f0ecf0d8d199f8fb32562d40cd1722 = $(`<div id="html_75f0ecf0d8d199f8fb32562d40cd1722" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 9.90 m/s<br>Mean Wind Direction: 222.85°</div>`)[0];
+                popup_bdf20818eaa8cddcbe06c3d20291c520.setContent(html_75f0ecf0d8d199f8fb32562d40cd1722);
+            
+        
+
+        marker_89ab0d4ea8b459a3e1ca8f18ff6ec082.bindPopup(popup_bdf20818eaa8cddcbe06c3d20291c520)
+        ;
+
+        
+    
+    
+            var marker_777aeef4015bd24f59d1ffc58cc1874e = L.marker(
+                [13.08010236663386, 80.11618994308675],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_44d9a61fffd5ee2f5a7ad29085d56d70 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(221.65528263765523deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_777aeef4015bd24f59d1ffc58cc1874e.setIcon(div_icon_44d9a61fffd5ee2f5a7ad29085d56d70);
+        
+    
+        var popup_5aff81657068159fff4749283dcfeae5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b17ce9ddffee009bfb8ff40a371e5fc3 = $(`<div id="html_b17ce9ddffee009bfb8ff40a371e5fc3" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 10.01 m/s<br>Mean Wind Direction: 221.66°</div>`)[0];
+                popup_5aff81657068159fff4749283dcfeae5.setContent(html_b17ce9ddffee009bfb8ff40a371e5fc3);
+            
+        
+
+        marker_777aeef4015bd24f59d1ffc58cc1874e.bindPopup(popup_5aff81657068159fff4749283dcfeae5)
+        ;
+
+        
+    
+    
+            var marker_5500238bab5bfe4c9b0337b45265788c = L.marker(
+                [13.079992205136007, 80.11631593665989],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_66219120df0ec63b3b1a1c851c26c8f3 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(221.65528263765523deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_5500238bab5bfe4c9b0337b45265788c.setIcon(div_icon_66219120df0ec63b3b1a1c851c26c8f3);
+        
+    
+        var popup_8967762cb2dd84976aa76ea487c02692 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ad88c84baf4daca94ef86c72194436ed = $(`<div id="html_ad88c84baf4daca94ef86c72194436ed" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 10.01 m/s<br>Mean Wind Direction: 221.66°</div>`)[0];
+                popup_8967762cb2dd84976aa76ea487c02692.setContent(html_ad88c84baf4daca94ef86c72194436ed);
+            
+        
+
+        marker_5500238bab5bfe4c9b0337b45265788c.bindPopup(popup_8967762cb2dd84976aa76ea487c02692)
+        ;
+
+        
+    
+    
+            var marker_ce3b41fb7213d0438af083a0817baeb6 = L.marker(
+                [13.080731677474574, 80.1156127766383],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_339b364e0c79ab90490f74bd1ea9fea7 = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(221.65528263765523deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_ce3b41fb7213d0438af083a0817baeb6.setIcon(div_icon_339b364e0c79ab90490f74bd1ea9fea7);
+        
+    
+        var popup_c1e4160f5ea7f9fe9a1a44d807b1c1a4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_dbde7090af864936c15de85cf2fd401f = $(`<div id="html_dbde7090af864936c15de85cf2fd401f" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 10.01 m/s<br>Mean Wind Direction: 221.66°</div>`)[0];
+                popup_c1e4160f5ea7f9fe9a1a44d807b1c1a4.setContent(html_dbde7090af864936c15de85cf2fd401f);
+            
+        
+
+        marker_ce3b41fb7213d0438af083a0817baeb6.bindPopup(popup_c1e4160f5ea7f9fe9a1a44d807b1c1a4)
+        ;
+
+        
+    
+    
+            var marker_2d52fcb460e8d6c658cb4f5a5dae24af = L.marker(
+                [13.07063393560703, 80.11509726236893],
+                {}
+            ).addTo(map_0eed814310b3c1acb7cae1d909efdd93);
+        
+    
+            var div_icon_bc6eab189aaa768b31e8a96a916615ed = L.divIcon({"className": "empty", "html": "\n                    \u003cdiv style=\"transform: rotate(222.85465476840454deg);\"\u003e\n                        \u003csvg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\n                            \u003cpath d=\"M12 2L12 19\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                            \u003cpath d=\"M7 7L12 2L17 7\" stroke=\"red\" stroke-width=\"2\"/\u003e\n                        \u003c/svg\u003e\n                    \u003c/div\u003e\n                    "});
+            marker_2d52fcb460e8d6c658cb4f5a5dae24af.setIcon(div_icon_bc6eab189aaa768b31e8a96a916615ed);
+        
+    
+        var popup_62e9f8119b312ce2f68a0b8aad042f53 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_397e4e925a7e43731e0ec0f5e4a1aafd = $(`<div id="html_397e4e925a7e43731e0ec0f5e4a1aafd" style="width: 100.0%; height: 100.0%;">Average Wind Speed: 9.90 m/s<br>Mean Wind Direction: 222.85°</div>`)[0];
+                popup_62e9f8119b312ce2f68a0b8aad042f53.setContent(html_397e4e925a7e43731e0ec0f5e4a1aafd);
+            
+        
+
+        marker_2d52fcb460e8d6c658cb4f5a5dae24af.bindPopup(popup_62e9f8119b312ce2f68a0b8aad042f53)
+        ;
+
+        
+    
+</script>
+</html>

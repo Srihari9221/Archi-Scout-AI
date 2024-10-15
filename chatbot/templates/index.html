@@ -1,0 +1,252 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" IE=edge>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Archi Scout AI</title>
+</head>
+<body>
+    {% comment %} <button id="toggle-btn" style="position: absolute; top: 20px; left: 300px; padding: 10px 20px; background-color: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer; z-index: 1000; transition: left 0.3s ease;">
+        Toggle Sidebar
+    </button> {% endcomment %}
+    
+    
+    <nav id="sidebar">
+        <div class="float-top">
+            <div style="background-color: #343541; padding: 10px; border-radius: 8px; text-align: center; margin-bottom: 20px;">
+                <form method="POST" action="{% url 'chat' %}" id="lat-lng-form" style="display: flex; flex-direction: column;">
+                    {% csrf_token %}
+                    <input type="number" id="latitude" name="latitude" placeholder="Latitude" step="any"
+                        style="background-color: #40414f; border: none; color: white; padding: 8px; margin: 5px; border-radius: 5px; width: 90%; text-align: center;">
+                    <input type="number" id="longitude" name="longitude" placeholder="Longitude" step="any"
+                        style="background-color: #40414f; border: none; color: white; padding: 8px; margin: 5px; border-radius: 5px; width: 90%; text-align: center;">
+                    <button type="submit" 
+                        style="background-color: #3498db; border: none; color: white; padding: 8px 15px; border-radius: 5px; cursor: pointer; margin-top: 10px;">
+                        Submit...
+                    </button>
+                </form>
+            </div>
+
+            <div id="weather-info" style="display: none; background-color: #40414f; color: white; padding: 10px; border-radius: 8px;">
+                <p style="margin: 5px 0;"><i class="fas fa-thermometer-half" style="color: #3498db; margin-right: 8px;"></i><span id="temperature">Temperature: --</span></p>
+                <p style="margin: 5px 0;"><i class="fas fa-tint" style="color: #3498db; margin-right: 8px;"></i><span id="humidity">Humidity: --</span></p>
+                <p style="margin: 5px 0;"><i class="fas fa-cloud-rain" style="color: #3498db; margin-right: 8px;"></i><span id="precipitation">Precipitation: --</span></p>
+                <p style="margin: 5px 0;"><i class="fas fa-wind" style="color: #3498db; margin-right: 8px;"></i><span id="wind-direction">Wind Direction: --</span></p>
+            </div>
+        </div>
+    </nav> 
+    <main>
+
+        <button id="toggle-btn" style="position: absolute; top: 20px; left: 300px; padding: 10px 20px; background-color: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer; z-index: 1000; transition: left 0.3s ease;">
+            <i class="fa fa-bars"></i>
+        </button>
+        <div class="view conversation-view" style="display: flex; flex-direction: column;">
+            <div class="model-name">
+                <i class="fa fa-bolt"></i> Archi Scout AI
+            </div>
+            
+            <div class="conversation-window" style="overflow-y: auto; height: 1200px; scroll-behavior: smooth;">
+                <!-- This will be dynamically populated with messages -->
+            </div>
+        </div>
+
+        <div id="message-form" action="{% url 'chat' %} " style="display: flex; justify-content: center; align-items: center; height: 10vh;">
+            <div class="message-wrapper" style="display: flex; align-items: center; gap: 10px; width: 60%; max-width: 600px;">
+                <form id="chat-form" method="POST" style="display: flex; flex-grow: 1; gap: 10px;">
+                    {% csrf_token %}
+                    <textarea id="message" name="message" rows="1" placeholder="Send a message" 
+                        style="flex-grow: 1; font-size: 16px; resize: none;"></textarea>
+                    <button class="send-button" type="button" style="background-color: #00AEEF; border: none; padding: 10px 20px; border-radius: 50%; color: white; font-size: 20px; cursor: pointer; margin-top: 10px;">
+                        <i class="fa fa-paper-plane"></i>
+                    </button> 
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const toggleBtn = document.getElementById('toggle-btn');
+    
+        // Updated toggle event listener
+        toggleBtn.addEventListener('click', function() {
+            if (sidebar.style.display === 'none' || !sidebar.style.display) {
+                sidebar.style.display = 'block';
+                toggleBtn.style.left = '300px'; // Move button to its original position when sidebar is visible
+            } else {
+                sidebar.style.display = 'none';
+                toggleBtn.style.left = '20px'; // Move button to the left when sidebar is hidden
+            }
+        })
+
+        const messagesDiv = document.querySelector('.conversation-window');
+        const userInput = document.getElementById('message');
+        const sendButton = document.querySelector('.send-button');
+
+        function sendMessage() {
+            const userText = userInput.value;
+            if (userText) {
+                appendMessage(userText, 'user');
+                userInput.value = ''; // Clear input field after sending
+
+                const lat = document.getElementById('latitude').value;
+                const lng = document.getElementById('longitude').value;
+
+                fetch("{% url 'chat' %}", {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRFToken': '{{ csrf_token }}',
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: new URLSearchParams({
+                        'message': userText,
+                        'latitude': lat,
+                        'longitude': lng,
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Process the response data
+                    const textList = data.text || [];
+                    const imageList = data.image || [];
+                    const mapList = data.map || [];
+
+                    // Iterate over the three lists together
+                    for (let i = 0; i < Math.max(textList.length, imageList.length, mapList.length); i++) {
+                        const text = textList[i];
+                        const image = imageList[i];
+                        const map = mapList[i];
+
+                        if (text && text !== "NoData") {
+                            appendMessage(text, 'assistant');
+                        }
+
+                        if (image && image !== "NoData") {
+                            appendImage(image);
+                        }
+
+                        if (map && map !== "NoData") {
+                            appendIframe(map);
+                        }
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+            }
+        }
+
+        sendButton.addEventListener('click', sendMessage);
+
+        userInput.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault(); 
+                sendMessage();
+            }
+        });
+
+        function appendMessage(text, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message', sender);
+            
+            const identityDiv = document.createElement('div');
+            identityDiv.classList.add('identity');
+            
+            const iconElement = document.createElement('i');
+            iconElement.classList.add(sender === 'user' ? 'user-icon' : 'gpt', 'user-icon');
+            iconElement.textContent = sender === 'user' ? '🤵' : '🤖';  
+            identityDiv.appendChild(iconElement);
+
+            const contentDiv = document.createElement('div');
+            contentDiv.classList.add('content');
+            
+            const messageText = document.createElement('p');
+            if (sender === 'assistant') {
+                messageText.setAttribute('id', 'typewriter');
+                messageText.style.whiteSpace = 'pre-wrap'; 
+            }
+            contentDiv.appendChild(messageText);
+            
+            if (sender === 'assistant') {
+                const copyBtn = document.createElement('button');
+                copyBtn.classList.add('copy-btn');
+                copyBtn.innerHTML = '<i class="fa fa-copy"></i>';
+                copyBtn.addEventListener('click', () => copyToClipboard(text));
+                contentDiv.appendChild(copyBtn);
+            }
+
+            messageDiv.appendChild(identityDiv);
+            messageDiv.appendChild(contentDiv);
+            messagesDiv.appendChild(messageDiv);
+            
+            scrollToBottom();
+
+            if (sender === 'assistant') {
+                typewriterEffect(messageText, text);
+            } else {
+                messageText.textContent = text;
+            }
+        }
+
+        function appendImage(imagePath) {
+            const imageDiv = document.createElement('div');
+            imageDiv.classList.add('image-container');
+        
+            const imgElement = document.createElement('img');
+            imgElement.src = imagePath; // Ensure this URL is correct
+            imgElement.alt = "Visualization";
+            imgElement.width = '600';
+            imgElement.height = '400';
+            imgElement.style.borderRadius = '8px'; // Optional styling
+        
+            imageDiv.appendChild(imgElement);
+            messagesDiv.appendChild(imageDiv);
+            scrollToBottom();
+        }
+
+        function appendIframe(mapUrl) {
+            const iframeDiv = document.createElement('div');
+            iframeDiv.classList.add('map-container');
+
+            const iframeElement = document.createElement('iframe');
+            iframeElement.src = mapUrl; 
+            iframeElement.width = '600';
+            iframeElement.height = '400';
+            iframeElement.style.borderRadius = '8px'; 
+            iframeElement.frameBorder = '0';
+
+            iframeDiv.appendChild(iframeElement);
+            messagesDiv.appendChild(iframeDiv);
+            scrollToBottom();
+        }
+
+        function scrollToBottom() {
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function typewriterEffect(element, text) {
+            let i = 0;
+            const speed = 10; 
+            function typeWriter() {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, speed);
+                }
+            }
+            typeWriter();
+        }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+              
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        }
+    </script>
+</body>
+</html>

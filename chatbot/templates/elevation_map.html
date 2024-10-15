@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>3D Elevation Map with Graph</title>
+    <style>
+        #map {
+            height: 50%;
+            width: 100%;
+        }
+        #chart {
+            height: 50%;
+            width: 100%;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+    <div id="map"></div>
+    <div id="chart"></div>
+    <script>
+        function initMap() {
+            var location = {lat: 13.074507492395776, lng: 80.1114155861864};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: location,
+                zoom: 14,
+                mapTypeId: 'terrain'
+            });
+
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map,
+                title: 'Elevation: 46.63 meters',
+                icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'
+            });
+
+            var infowindow = new google.maps.InfoWindow({
+                content: 'Elevation: 46.63 meters'
+            });
+            infowindow.open(map, marker);
+            drawChart(46.62687683105469);
+        }
+
+        function drawChart(elevation) {
+            google.charts.load('current', {'packages':['corechart']}); 
+            google.charts.setOnLoadCallback(function() {
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'Location');
+                data.addColumn('number', 'Elevation');
+                data.addRows([
+                    ['Sea-Level', 0],
+                    ['Mid', Math.round(elevation / 2)],
+                    ['Location', elevation]
+                ]);
+
+                var options = {
+                    title: 'Elevation Profile',
+                    hAxis: {
+                        title: 'Elevation (meters)',
+                        textStyle: {color: '#333'},
+                        gridlines: {color: '#f3f3f3'}
+                    },
+                    vAxis: {
+                        title: 'Location',
+                        textStyle: {color: '#333'},
+                        gridlines: {color: '#f3f3f3'},
+                        viewWindow: {min: 0},
+                    },
+                    legend: 'none',
+                    colors: ['#76A7FA'],
+                    backgroundColor: '#e0f7fa',
+                    chartArea: {width: '80%', height: '70%'},
+                    bars: 'horizontal',
+                    bar: { groupWidth: '75%' },
+                };
+
+                var chart = new google.visualization.BarChart(document.getElementById('chart'));
+                chart.draw(data, options);
+            });
+        }
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJywdV0_cC5BOPajS994D5SNLDXwxKWDo&callback=initMap">
+    </script>
+</body>
+</html>

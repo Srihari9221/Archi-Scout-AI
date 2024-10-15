@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Embed Iframe Example</title>
+    <script>
+        function appendIframe() {
+            var container = document.getElementById("iframeContainer");
+            var iframe = document.createElement("iframe");
+            iframe.src = "{% url 'elevation_map'%}";
+            iframe.width = "600";
+            iframe.height = "400";
+            container.appendChild(iframe);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="appendIframe()">Append Iframe</button>
+    <div id="iframeContainer"></div>
+</body>
+</html>

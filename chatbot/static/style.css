@@ -1,0 +1,261 @@
+/* General Settings */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f0f4ff, #ffffff);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Navigation Sidebar */
+nav {
+    width: 250px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-right: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Main Chat Section */
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.9);
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Lat-Long Form Styling */
+#lat-lng-form input {
+    background-color: #f5f7ff;
+    border: 1px solid #cfd8dc;
+    color: #333;
+    padding: 10px;
+    margin: 10px 0;
+    width: 90%;
+    text-align: center;
+    border-radius: 6px;
+    transition: transform 0.3s ease-in-out;
+}
+
+#lat-lng-form input:hover {
+    transform: scale(1.03);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#lat-lng-form button {
+    background: linear-gradient(135deg, #3498db, #4f83cc);
+    border: none;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.4);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#lat-lng-form button:hover {
+    background: linear-gradient(135deg, #2980b9, #3a77c0);
+    transform: scale(1.05);
+}
+
+/* Weather Info Styling */
+#weather-info {
+    background-color: #ffffff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    color: #333;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#weather-info p {
+    margin: 5px 0;
+    color: #333;
+}
+
+/* User Menu Styling */
+.user-menu button {
+    background-color: #f9f9f9;
+    color: #333;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.user-menu button:hover {
+    background-color: #ececec;
+    transform: scale(1.03);
+}
+
+.user-menu ul li button:hover {
+    background-color: #eaeaea;
+}
+
+/* Conversation View */
+.view.conversation-view {
+    background-color: transparent;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.model-name {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #3498db;
+    margin-bottom: 15px;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Message Window */
+.conversation-window {
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    flex-grow: 1;
+    overflow-y: auto;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Message Bubbles */
+.message {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    border-radius: 12px;
+    padding: 10px;
+    max-width: 70%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+    animation: fadeInPop 0.4s ease-in-out;
+}
+
+@keyframes fadeInPop {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.message .identity {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.message .content {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.message.user .content {
+    background: linear-gradient(135deg, #e1f5fe, #b3e5fc);
+}
+
+.message.assistant .content {
+    background-color: #f8f8f8;
+}
+
+/* Message Input Section */
+#message-form {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ChatGPT-Like Text Input */
+#message-form textarea {
+    width: 90%;  /* Adjusted width */
+    height: 35px;  /* Initial height similar to ChatGPT */
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    color: #333;
+    resize: none;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    font-size: 16px;  /* Increased font size for a more readable input area */
+}
+
+#message-form textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 4px rgba(52, 152, 219, 0.3);
+}
+
+#message-form textarea:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
+}
+
+/* ChatGPT-Like Send Button */
+.send-button {
+    background: linear-gradient(135deg, #3498db, #4f83cc);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s ease-in-out;
+    height: 40px;  /* Similar height as the input */
+    display: flex;
+    align-items: center;  /* Vertically align the send icon */
+    justify-content: center;
+    font-size: 16px;
+}
+
+.send-button i {
+    margin-left: 5px;
+}
+
+.send-button:hover {
+    background: linear-gradient(135deg, #2980b9, #3a77c0);
+    transform: scale(1.08);
+    box-shadow: 0px 4px 8px rgba(52, 152, 219, 0.4);
+}
+
+/* Scroll Behavior */
+.conversation-window::-webkit-scrollbar {
+    width: 12px;
+}
+
+.conversation-window::-webkit-scrollbar-thumb {
+    background-color: #bbb;
+    border-radius: 10px;
+}
+
+.conversation-window::-webkit-scrollbar-thumb:hover {
+    background-color: #888;
+}
+
+/* Subtle Animations */
+.message.user .content,
+.message.assistant .content {
+    animation: fadeInPop 0.5s ease-in-out;
+}
