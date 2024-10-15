@@ -16,7 +16,7 @@ Archi Scout AI aims to address these challenges by streamlining the site analysi
    ```bash
    pip install -r requirements.txt
 
-   ```
+```
 3. Download the spaCy encoding model:
    
    ```bash
