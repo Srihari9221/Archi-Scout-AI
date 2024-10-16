@@ -8,11 +8,12 @@ for developing high-quality designs.
 
 Archi Scout AI aims to address these challenges by streamlining the site analysis process for architects. By providing quick access to essential data such as sun path, wind direction, elevation, precipitation, temperature, soil characteristics, and air quality. Archi Scout AI allows architects to make informed decisions efficiently. The chatbot automates data collection and visualization enabling architects to focus on the creative aspects of their designs while minimizing the time and effort required for site analysis. This innovative solution ultimately empowers architects to deliver highquality designs in a more timely manner.
 
+```
 ## Setup
 
 1. Clone the repository
 
-```
+
 
 2. Install all the requirements:
    ```bash
