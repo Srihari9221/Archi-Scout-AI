@@ -3,8 +3,10 @@
 
 ## Project Abstract
 
-Site analysis is a crucial step in the architectural design process thatinvolves assessing a site's physical, environmental, and contextualcharacteristics. This phase informs design decisions and ensures that the final outcome is functional, sustainable, and aesthetically pleasing.Architects evaluate factors such as topography, climate, local ecology,and existing infrastructure, which significantly influence their design
-solutions. However, the site analysis process can be time-consumingand complex, often resulting in delays that hinder creativity and limitthe time available for developing high-quality designs.
+Site analysis is a crucial step in the architectural design process thatinvolves assessing a site's physical, environmental, and contextualcharacteristics.
+This phase informs design decisions and ensures that the final outcome is functional, sustainable, and aesthetically pleasing.Architects evaluate factors
+such as topography, climate, local ecology,and existing infrastructure, which significantly influence their designsolutions. However, the site analysis
+ process can be time-consumingand complex, often resulting in delays that hinder creativity and limitthe time available for developing high-quality designs.
 
 Archi Scout AI is a chatbot that aims to address these challenges bystreamlining the site analysis process for architects. By providing quick access to essential data—such as sun path, wind direction,
 elevation, precipitation, temperature, soil characteristics, and air quality.Archi Scout AI allows architects to make informed decisions efficiently. The chatbot's intuitive visualizations enhance user
