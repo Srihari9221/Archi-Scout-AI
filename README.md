@@ -9,9 +9,11 @@ and aesthetically pleasing.Architects evaluate factors such as topography, clima
 which significantly influence their designsolutions. However, the site analysis process can be time-consumingand complex,
 often resulting in delays that hinder creativity and limitthe time available for developing high-quality designs.
 
-Archi Scout AI is a chatbot that aims to address these challenges bystreamlining the site analysis process for architects. By providing quick access to essential data—such as sun path, wind direction,
-elevation, precipitation, temperature, soil characteristics, and air quality.Archi Scout AI allows architects to make informed decisions efficiently. The chatbot's intuitive visualizations enhance user
-understanding, enabling architects to focus on the creative aspects of their designs while minimizing the time and effort required for siteanalysis. This innovative solution ultimately empowers architects to
+Archi Scout AI is a chatbot that aims to address these challenges bystreamlining the site analysis process for architects.
+By providing quick access to essential data—such as sun path, wind direction,elevation, precipitation, temperature, soil
+characteristics, and air quality.Archi Scout AI allows architects to make informed decisions efficiently. The chatbot's
+intuitive visualizations enhance user understanding, enabling architects to focus on the creative aspects of their designs
+while minimizing the time and effort required for siteanalysis. This innovative solution ultimately empowers architects to
 deliver high-quality designs in a more timely manner.
 
 ```
