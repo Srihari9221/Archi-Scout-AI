@@ -70,7 +70,7 @@ def get_historical_wind_data_for_coords(coords, start_date, end_date):
 
     return all_data
 
-def add_markers_to_map(map_obj, coords, wind_data, specified_lat, specified_lon):
+def add_markers_to_map(map_obj, coords, wind_data, specified_lat, specified_lon,start_date,end_date):
     avg_wind_dir_spd = None  
 
     # Print the wind data for the specified coordinates if available
@@ -79,7 +79,7 @@ def add_markers_to_map(map_obj, coords, wind_data, specified_lat, specified_lon)
         if windspeeds and winddirections:
             mean_direction = calculate_mean_direction(winddirections)
             average_speed = calculate_average_speed(windspeeds)
-            avg_wind_dir_spd = f"Average Wind Speed: {average_speed:.2f} m/s \n Mean Wind Direction: {mean_direction:.2f}°\n"
+            avg_wind_dir_spd = f" Start Date : {start_date} \n Wind Date : {end_date} \n Average Wind Speed: {average_speed:.2f} m/s \n Mean Wind Direction: {mean_direction:.2f}°\n"
     else:
         print("No data available for the specified latitude and longitude.")
 
@@ -127,7 +127,7 @@ def generate_wind_map(lat, lon, date_dict, radius_m=1000, num_points=50):
     wind_map = folium.Map(location=[lat, lon], zoom_start=16)
 
     # Add markers to the map and get the wind data for the specified latitude and longitude
-    avg_wind_dir_spd = add_markers_to_map(wind_map, coords, wind_data, lat, lon)
+    avg_wind_dir_spd = add_markers_to_map(wind_map, coords, wind_data, lat, lon,start_date,end_date)
 
     
     save_dir = os.path.join(settings.BASE_DIR,'chatbot', 'templates')  

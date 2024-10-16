@@ -8,7 +8,7 @@ from .utils.soil_property_function import process_all_properties
 from .utils.disturbing_factor_function import disturbing_factors
 from .utils.air_quality_function import air_quality_index
 from django.http import JsonResponse
-from .utils.prompts import Solar_Wind_prompt,summary_prompt,Climate_prompt,Elavation_prompt,Soil_properties_prompt,custom_string_to_dict,disturbing_factors_prompt,air_quality_prompt
+from .utils.prompts import Solar_Wind_prompt,Climate_prompt,Elavation_prompt,Soil_properties_prompt,custom_string_to_dict,disturbing_factors_prompt,air_quality_prompt,conversation_prompt,summary_prompt
 from langchain.schema import HumanMessage, AIMessage
 from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
@@ -27,7 +27,7 @@ chat_history_for_summary_llm = []
 chat_history_for_summary_llm.append(HumanMessage(content="Please elaborate on the given summary in a concise, point-wise manner. Ensure the points are clear and organized. Avoid excessive text or unnecessary details. Do not use symbols like asterisks to enclose the text."))
 
 # Set API key for ChatGroq
-os.environ["GROQ_API_KEY"] = "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"
+os.environ["GROQ_API_KEY"] = "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"
 
 # Initialize the language model
 llm = ChatGroq(
@@ -47,7 +47,7 @@ llm_2= ChatGroq(
 # Define the chat prompt template
 finetune_prompt = ChatPromptTemplate.from_messages(
     [
-        ("system", Solar_Wind_prompt+Climate_prompt+Elavation_prompt+Soil_properties_prompt+disturbing_factors_prompt+air_quality_prompt),
+        ("system", Solar_Wind_prompt+Climate_prompt+Elavation_prompt+Soil_properties_prompt+disturbing_factors_prompt+air_quality_prompt+conversation_prompt),
         ("placeholder", "{chat_history_for_finetuned_llm}"),
         ("human", "{input}"),
     ]
@@ -73,7 +73,7 @@ def chatbot(request):
             lat_input = request.POST.get("latitude")
             lon_input = request.POST.get("longitude")
             if lat_input and lon_input:
-                lat = float(lat_input)  
+                lat = float(lat_input)  # Convert to float for safety
                 lon = float(lon_input)
                 request.session['latitude'] = lat
                 request.session['longitude'] = lon
@@ -96,7 +96,7 @@ def chatbot(request):
             print(input_chat)
 
             chat_history_for_finetuned_llm.append(HumanMessage(content=input_chat))
-            chat_history_for_summary_llm.append(HumanMessage(content=input_chat))
+            chat_history_for_summary_llm.append(HumanMessage(content=input_chat))# Append user message to chat history
             
             
             text_to_dict = finetuned_llm_model.invoke({
@@ -117,60 +117,144 @@ def chatbot(request):
             if "sunpath" in dict_response:
                     parm_dict = dict_response.get("sunpath")
                     summary , image_path = get_solar_input(lat,lon,parm_dict)
+                    summary_response = summary_llm_model.invoke({
+                    "summary": summary,
+                    "chat_history_for_summary_llm": chat_history_for_summary_llm,
+                    "input": input_chat,
+                    })
+                    chat_history_for_summary_llm.append(AIMessage(content=summary))
+                    chat_history_for_summary_llm.append(AIMessage(content=summary_response.content))
+                    text_lst.append(summary_response.content)
                     image_lst.append(image_path)
-                    text_lst.append(summary)
                     map_lst.append("NoData")
-                
+                    print(summary)
 
             if "windpath" in dict_response:
                     parm_dict = dict_response.get("windpath")
                     summary , wind_map= generate_wind_map(lat,lon,parm_dict)
-                    text_lst.append(summary)
+                    summary_response = summary_llm_model.invoke({
+                    "summary": summary,
+                    "chat_history_for_summary_llm": chat_history_for_summary_llm,
+                    "input": input_chat,
+                    })
+                    chat_history_for_summary_llm.append(AIMessage(content=summary))
+                    chat_history_for_summary_llm.append(AIMessage(content=summary_response.content))
+                    text_lst.append(summary_response.content)
                     map_lst.append("get-wind-map/")
                     image_lst.append("NoData")
+                    print(summary)
 
             if "climate" in dict_response:
                     parm_dict = dict_response.get("climate")
                     summary, image_path = get_single_param_input(lat,lon,parm_dict)
-                    text_lst.append(summary)
+                    summary_response = summary_llm_model.invoke({
+                    "summary": summary,
+                    "chat_history_for_summary_llm": chat_history_for_summary_llm,
+                    "input": input_chat,
+                    })
+                    chat_history_for_summary_llm.append(AIMessage(content=summary))
+                    chat_history_for_summary_llm.append(AIMessage(content=summary_response.content))
+                    text_lst.append(summary_response.content)
                     image_lst.append(image_path)
                     map_lst.append("NoData")
+                    print(summary)
 
             if "elavation" in dict_response:
                     
                     summary ,elevation_map= generate_elevation_map(lat,lon)
-                    text_lst.append(summary)
+                    summary_response = summary_llm_model.invoke({
+                    "summary": summary,
+                    "chat_history_for_summary_llm": chat_history_for_summary_llm,
+                    "input": input_chat,
+                    })
+                    chat_history_for_summary_llm.append(AIMessage(content=summary))
+                    chat_history_for_summary_llm.append(AIMessage(content=summary_response.content))
+                    text_lst.append(summary_response.content)
                     map_lst.append("get-elevation-map/")
                     image_lst.append("NoData")
+                    print(summary)
 
             if "soilproperty" in dict_response:
+                    summary_response_lst = []
                     parm_dict = dict_response.get("soilproperty")
                     summary_lst ,img_lst,map_list= process_all_properties(lat,lon,parm_dict)
-                    text_lst.extend(summary_lst)
+                    for sumele in summary_lst:
+                            summary_response = summary_llm_model.invoke({
+                            "summary": sumele,
+                            "chat_history_for_summary_llm": chat_history_for_summary_llm,
+                            "input": input_chat,
+                            })
+                            chat_history_for_summary_llm.append(AIMessage(content=sumele))
+                            chat_history_for_summary_llm.append(AIMessage(content=summary_response.content))
+                            summary_response_lst .append(summary_response.content)
+                    text_lst.extend(summary_response_lst)
                     map_lst.extend(map_list)
                     image_lst.extend(img_lst)
+                    
 
             if "disturbing" in dict_response:
                 
-                summary = disturbing_factors(lat,lon)
-                text_lst.append(summary)
-                map_lst.append("get-disturbing-map/")
-                image_lst.append("NoData")
+                    summary = disturbing_factors(lat,lon)
+                    summary_response = summary_llm_model.invoke({
+                    "summary": summary,
+                    "chat_history_for_summary_llm": chat_history_for_summary_llm,
+                    "input": input_chat,
+                    })
+                    chat_history_for_summary_llm.append(AIMessage(content=summary))
+                    chat_history_for_summary_llm.append(AIMessage(content=summary_response.content))
+                    text_lst.append(summary_response.content)
+                    map_lst.append("get-disturbing-map/")
+                    image_lst.append("NoData")
+                    print(summary)
 
             if "airquality" in dict_response:
                     summary , image_path = air_quality_index(lat,lon)
-                    text_lst.append(summary)
+                    summary_response = summary_llm_model.invoke({
+                    "summary": summary,
+                    "chat_history_for_summary_llm": chat_history_for_summary_llm,
+                    "input": input_chat,
+                    })
+                    chat_history_for_summary_llm.append(AIMessage(content=summary))
+                    chat_history_for_summary_llm.append(AIMessage(content=summary_response.content))
+                    text_lst.append(summary_response.content)
                     image_lst.append(image_path)
                     map_lst.append("NoData")
+                    print(summary)
 
-            
+
+            if "llm" in dict_response:
+                summary = "Responce to the user input"
+                summary_response = summary_llm_model.invoke({
+                "summary": summary,
+                "chat_history_for_summary_llm": chat_history_for_summary_llm,
+                "input": input_chat,
+                })
+                chat_history_for_summary_llm.append(AIMessage(content=summary_response.content))
+                text_lst.append(summary_response.content)
+                image_lst.append("NoData")
+                map_lst.append("NoData")
+
+            # # Get the response from the chatbot
+            # summary_response = summary_llm_model.invoke({
+            # "summary": summary,
+            # "chat_history_for_summary_llm": chat_history_for_summary_llm,
+            # "input": input_chat,
+            # })
+
+            # # Append AI message to chat history
+        
+            # chat_history_for_summary_llm.append(AIMessage(content=summary_response.content))
+            # print(summary_response.content,"<---- response")
             response["image"] = image_lst
             response["map"] = map_lst
             response["text"] = text_lst
             return JsonResponse(response) 
 
     # print(lat,lon)
-    return render(request,'index.html')
+    return render(request, 'index.html', {
+        'latitude': lat,
+        'longitude': lon
+    })
 
 
 

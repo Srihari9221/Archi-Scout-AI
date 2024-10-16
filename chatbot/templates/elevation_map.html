@@ -24,7 +24,7 @@
     <div id="chart"></div>
     <script>
         function initMap() {
-            var location = {lat: 13.074507492395776, lng: 80.1114155861864};
+            var location = {lat: 13.088130352528951, lng: 80.1460017408729};
             var map = new google.maps.Map(document.getElementById('map'), {
                 center: location,
                 zoom: 14,
@@ -34,15 +34,15 @@
             var marker = new google.maps.Marker({
                 position: location,
                 map: map,
-                title: 'Elevation: 46.63 meters',
+                title: 'Elevation: 36.78 meters',
                 icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'
             });
 
             var infowindow = new google.maps.InfoWindow({
-                content: 'Elevation: 46.63 meters'
+                content: 'Elevation: 36.78 meters'
             });
             infowindow.open(map, marker);
-            drawChart(46.62687683105469);
+            drawChart(36.78178405761719);
         }
 
         function drawChart(elevation) {

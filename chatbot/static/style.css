@@ -1,8 +1,8 @@
 /* General Settings */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #f0f4ff, #ffffff);
-    color: #333;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, rgba(173, 216, 230, 0.9), rgba(255, 255, 255, 0.9)); /* Light blue to transparent white */
+    color: #2c3e50;
     margin: 0;
     padding: 0;
     display: flex;
@@ -12,250 +12,208 @@ body {
 
 /* Navigation Sidebar */
 nav {
-    width: 250px;
-    background-color: #ffffff;
+    width: 260px;
+    background: linear-gradient(135deg, #e1f5fe, #b3e5fc); /* Light transparent black */
+
+    color: #2c3e50; /* Adjusted text color for contrast */
     padding: 20px;
-    border-right: 1px solid #e0e0e0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s ease;
 }
 
-/* Main Chat Section */
-main {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background: rgba(255, 255, 255, 0.9);
-    height: 100vh;
-    overflow: hidden;
+nav:hover {
+    width: 280px;
+}
+
+.sidebar-card {
+    background-color: rgba(173, 216, 230, 0.8); /* Lighter shade for sidebar cards with transparency */
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Lat-Long Form Styling */
 #lat-lng-form input {
-    background-color: #f5f7ff;
-    border: 1px solid #cfd8dc;
-    color: #333;
+    background-color: rgba(44, 62, 80, 0.9); /* Darker blue with slight transparency */
+    border: 2px solid rgba(52, 152, 219, 1); /* Solid border */
+    color: #ecf0f1;
     padding: 10px;
     margin: 10px 0;
     width: 90%;
-    text-align: center;
     border-radius: 6px;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease;
+    text-align: center;
 }
 
-#lat-lng-form input:hover {
-    transform: scale(1.03);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+#lat-lng-form input:focus {
+    border-color: rgba(52, 152, 219, 1);
 }
 
 #lat-lng-form button {
-    background: linear-gradient(135deg, #3498db, #4f83cc);
-    border: none;
+    background-color: rgba(52, 152, 219, 1); /* Solid blue */
     color: white;
     padding: 10px;
     margin-top: 10px;
     cursor: pointer;
     border-radius: 6px;
-    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.4);
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.3s, background-color 0.3s;
+    width: 100%;
 }
 
 #lat-lng-form button:hover {
-    background: linear-gradient(135deg, #2980b9, #3a77c0);
+    background-color: rgba(41, 128, 185, 1); /* Slightly darker blue */
     transform: scale(1.05);
 }
 
 /* Weather Info Styling */
-#weather-info {
-    background-color: #ffffff;
-    padding: 15px;
-    border: 1px solid #ddd;
-    color: #333;
-    border-radius: 6px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
 #weather-info p {
-    margin: 5px 0;
-    color: #333;
+    margin: 8px 0;
+    font-size: 14px;
+    color: rgba(236, 240, 241, 1); /* Solid white */
 }
 
-/* User Menu Styling */
-.user-menu button {
-    background-color: #f9f9f9;
-    color: #333;
+#weather-info i {
+    color: rgba(52, 152, 219, 1); /* Solid blue */
+}
+
+/* Main Chat Section */
+main {
+    flex-grow: 1;
+    background: rgba(241, 245, 249, 0.9); /* Slightly transparent light grey */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* Toggle Button */
+#toggle-btn {
+    position: absolute;
+    top: 20px;
+    left: 300px;
+    background-color: rgba(52, 152, 219, 1); /* Solid blue */
+    color: white;
     border: none;
-    padding: 12px;
+    padding: 12px 16px;
+    border-radius: 50px;
     cursor: pointer;
-    width: 100%;
-    text-align: left;
-    transition: background-color 0.3s ease, transform 0.2s;
+    z-index: 1001;
+    transition: all 0.3s ease;
 }
 
-.user-menu button:hover {
-    background-color: #ececec;
-    transform: scale(1.03);
-}
-
-.user-menu ul li button:hover {
-    background-color: #eaeaea;
+#toggle-btn:hover {
+    background-color: rgba(41, 128, 185, 1); /* Slightly darker blue */
 }
 
 /* Conversation View */
 .view.conversation-view {
-    background-color: transparent;
-    padding: 20px;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    height: 100%;
-    overflow-y: auto;
-}
-
-.model-name {
-    font-size: 1.6em;
-    font-weight: bold;
-    color: #3498db;
-    margin-bottom: 15px;
-    text-align: center;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Message Window */
-.conversation-window {
-    background-color: #ffffff;
     padding: 20px;
-    border: 1px solid #ddd;
-    flex-grow: 1;
-    overflow-y: auto;
+    background-color: rgba(255, 255, 255, 0.9); /* White with transparency */
     border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    height: 80vh;
+    overflow-y: auto;
+}
+
+/* Model Name */
+.model-name {
+    font-size: 2em;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Conversation Window */
+.conversation-window {
+    flex-grow: 1;
+    padding: 10px;
+    background-image: url('{% static "background-image.jpg" %}'); /* Add your background image */
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
 }
 
 /* Message Bubbles */
 .message {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     display: flex;
     align-items: flex-start;
     border-radius: 12px;
-    padding: 10px;
-    max-width: 70%;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
-    animation: fadeInPop 0.4s ease-in-out;
+    padding: 15px;
+    max-width: 65%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
 }
 
-@keyframes fadeInPop {
-    0% {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-.message .identity {
-    margin-right: 10px;
-    font-size: 1.2em;
-}
-
-.message .content {
-    background-color: #f0f0f0;
-    padding: 10px;
-    border-radius: 12px;
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
-}
-
-.message.user .content {
-    background: linear-gradient(135deg, #e1f5fe, #b3e5fc);
-}
-
-.message.assistant .content {
+/* Assistant Message */
+.message.assistant {
     background-color: #f8f8f8;
+    /* Light blue with transparency */
+    color: black;
+    align-self: flex-start; /* Align left */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2), /* Strong shadow */
+                0 4px 6px rgba(0, 0, 0, 0.1),   /* Depth shadow */
+                0 0 20px rgba(0, 0, 0, 0.1) inset; /* Inset for 3D effect */
+}
+
+/* User Message */
+.message.user {
+    background: linear-gradient(135deg, #e1f5fe, #b3e5fc);
+    /* Unique color for user messages with slight transparency */
+    align-self: flex-end; /* Align right */
+    color: #2c3e50;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+}
+
+/* Increased space between user and assistant messages */
+.message.user, .message.assistant {
+    margin-bottom: 25px;
 }
 
 /* Message Input Section */
 #message-form {
-    background-color: #f9f9f9;
-    padding: 10px;
-    border-top: 1px solid #ddd;
+    background-color: rgba(255, 255, 255, 0.9); /* Transparent white */
+    padding: 15px;
+    border-top: 1px solid rgba(236, 240, 241, 1); /* Solid border for separation */
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-/* ChatGPT-Like Text Input */
 #message-form textarea {
-    width: 90%;  /* Adjusted width */
-    height: 35px;  /* Initial height similar to ChatGPT */
-    padding: 10px;
-    background-color: #ffffff;
-    border: 1px solid #ccc;
+    width: 85%;
+    padding: 12px;
+    background-color: rgba(236, 240, 241, 0.8); /* Slightly transparent light grey */
+    border: 1px solid rgba(189, 195, 199, 1); /* Solid border */
     border-radius: 12px;
-    color: #333;
     resize: none;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    font-size: 16px;  /* Increased font size for a more readable input area */
+    transition: all 0.3s;
+    font-size: 16px;
 }
 
 #message-form textarea:focus {
     outline: none;
-    border-color: #3498db;
-    box-shadow: 0 0 4px rgba(52, 152, 219, 0.3);
+    border-color: rgba(52, 152, 219, 1); /* Focused border */
 }
 
-#message-form textarea:hover {
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-    transform: scale(1.02);
-}
-
-/* ChatGPT-Like Send Button */
 .send-button {
-    background: linear-gradient(135deg, #3498db, #4f83cc);
+    background-color: rgba(52, 152, 219, 1); /* Solid blue */
     color: white;
-    padding: 12px;
     border: none;
-    border-radius: 12px;
+    padding: 12px 16px;
+    border-radius: 50%;
     cursor: pointer;
-    transition: transform 0.3s, background-color 0.3s ease-in-out;
-    height: 40px;  /* Similar height as the input */
-    display: flex;
-    align-items: center;  /* Vertically align the send icon */
-    justify-content: center;
-    font-size: 16px;
-}
-
-.send-button i {
-    margin-left: 5px;
+    transition: all 0.3s ease;
 }
 
 .send-button:hover {
-    background: linear-gradient(135deg, #2980b9, #3a77c0);
-    transform: scale(1.08);
-    box-shadow: 0px 4px 8px rgba(52, 152, 219, 0.4);
-}
-
-/* Scroll Behavior */
-.conversation-window::-webkit-scrollbar {
-    width: 12px;
-}
-
-.conversation-window::-webkit-scrollbar-thumb {
-    background-color: #bbb;
-    border-radius: 10px;
-}
-
-.conversation-window::-webkit-scrollbar-thumb:hover {
-    background-color: #888;
-}
-
-/* Subtle Animations */
-.message.user .content,
-.message.assistant .content {
-    animation: fadeInPop 0.5s ease-in-out;
+    background-color: rgba(41, 128, 185, 1); /* Slightly darker blue */
 }

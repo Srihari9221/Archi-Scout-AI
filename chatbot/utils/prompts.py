@@ -33,11 +33,6 @@ For wind path:
 {{'windpath':{{'start_date': 'YYYY-MM-DD','end_date': 'YYYY-MM-DD',}}}}
 
 
-If the user input includes generic conversational phrases like greetings or compliments (e.g., "hi," "bye," "how are you," "wow," "excellent"), output them in this format:
-
-
-{{'llm':{{'user_input': 'user input text'}}}}
-
 
  IMPORTANT RULES:
 - For solar path, if the user does not specify a time, assume the default start time is 6:00 AM and the default end time is 6:00 PM.
@@ -149,41 +144,10 @@ If the user input includes generic conversational phrases like greetings or comp
    {{'windpath':{{'start_date': '2023-06-05','end_date': '2023-06-05'}}}}
    
 
- Generic Conversational Inputs:
-
-If the user provides generic conversational input, output the following format:
-
-1. Input: "Hi, how are you?"
-   Output: 
-   
-   {{'llm':{{'user_input': 'Hi, how are you?'}}}}
-   
-
-2. Input: "Wow! You are great!"
-   Output: 
-   
-   {{'llm':{{'user_input': 'Wow! You are great!'}}}}
-   
-
-3. Input: "Excellent job."
-   Output: 
-   
-   {{'llm':{{'user_input': 'Excellent job.'}}}}
-   
-
+ 
 Follow these rules precisely and return responses in the correct format based on the user input.
 
 """
-
-
-summary_prompt = """
-you are a helpful chat assistant who explains the below given details in Natural language without missing any single data 
-make you voice clear give the details in pointwise very crisp and clear explanation is necessary :
-{summary}
-
-"""
-
-
 
 Climate_prompt ="""
 You are an assistant that extracts the start year, end year, and optionally the start month and end month for climate data visualization, considering various climate parameters. The user will provide input with a year range or a single year for the desired climate data. You will return only the extracted information in the specified format.
@@ -1039,5 +1003,124 @@ Here are 10 sample input and output pairs for your air quality index data extrac
 
    Output:  
    {{'airquality': 'True'}}
+
+"""
+
+
+
+conversation_prompt = """
+
+Prompt Template
+Description:This template checks if the user query matches a pattern indicating a need for a descriptive response. If it does, the output indicates that an LLM (language model) response is required.If the user input not matches with the above templates 
+
+output formate:
+
+Input: {{query}}
+Output:
+{{'llm':'True'}}
+
+
+If the query is not matching, an appropriate response is given indicating that the query requires descriptive output.
+
+Sample Inputs and Outputs
+
+1. Input: 
+   hello
+
+   Output: 
+   {{'llm':'True'}}
+
+2. Input: 
+   Can you explain the chemical content present in the air ?
+
+   Output: 
+   {{'llm':'True'}}
+
+3. Input: 
+   What is the process of site analysis?
+
+   Output: 
+   {{'llm':'True'}}
+
+4. Input: 
+   Please elaborate on the soil info.
+
+   Output: 
+   {{'llm':'True'}}
+
+5. Input: 
+   Hi there!
+
+   Output: 
+   {{'llm':'True'}}
+
+6. Input: 
+   can you elaborate the answer?
+
+   Output: 
+   {{'llm':'True'}}
+
+7. Input: 
+   What is zienit angle?
+
+   Output: 
+   {{'llm':'True'}}
+
+8. Input: 
+   Tell me about the importance of soil properties.
+
+   Output: 
+   {{'llm':'True'}}
+
+9. Input: 
+   What do you know about the solar path analysis?
+
+   Output: 
+   {{'llm':'True'}}
+
+10. Input: 
+   Explain the benefits of Air quality Index.
+
+   Output: 
+   {{'llm':'True'}}
+
+11. Input: 
+   bye!
+
+   Output: 
+   {{'llm':'True'}}   
+
+This format allows you to handle conversational and descriptive queries using an LLM while maintaining consistency across the input and output structure.
+
+"""
+
+
+summary_prompt = """
+You are required to answer questions based on the provided summary data. Your responses must adhere to the following guidelines:
+
+Provide clear, natural language explanations for all numerical data.
+Make sure all units are clearly stated.
+Avoid any markdowns or technical syntax in the response; just plain text.
+For disturbing factors, categorize the factor clearly and give its distance.
+Ensure numerical precision and proper formatting, especially for coordinates, angles, distances, and other quantitative data.
+Align information in a user-friendly and readable format, without adding or altering the original data provided in the summary.
+For the sunpath and windpath summaries, present the information in full sentences, integrating the numbers as part of the natural language output.
+Respond naturally to the user query, without repeating the query.
+
+General Guidelines for all Outputs:
+
+Always ensure numbers and units are clearly presented.
+Keep sentences in plain, natural language form with no use of markdown.
+Use bullet points or full sentences to convey information for lists of items.
+Do not change the structure of the data or modify numerical values.
+For disturbing factors, always specify the name, category, distance, and coordinates in the output.
+Follow these rules for all types of queries to maintain consistency and readability.
+
+
+If the user asks for specific date and time data, but the provided summary does not contain information tied to any particular date or time (i.e., the summary is generalized, like annual averages or other non-time-specific data), do not mention any date or time in your response. Instead, focus on providing only the information given in the summary, regardless of the date or time asked in the question. This ensures that the response stays consistent with the data provided, without assuming or implying any missing details.
+
+For example, if the question asks for wind data on a specific date (e.g., "Provide windpath for October 16, 2011") but the summary contains only annual averages, simply provide the summary as it is, without referencing the date or implying data specific to that date.
+
+{summary}
 
 """

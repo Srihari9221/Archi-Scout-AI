@@ -83,7 +83,8 @@ def plot_solar_path(start_datetime, end_datetime, latitude, longitude):
     # Store the detailed summary in a variable
     solar_path_summary = f"""
 --- Solar Path Technical Summary ---
-Date: Latitude {latitude:.4f}, Longitude {longitude:.4f}
+Date: Start Date {start_datetime} , End Date{end_datetime}
+Location: Latitude {latitude:.4f}, Longitude {longitude:.4f}
 Max Solar Noon: {max_elevation_time.strftime('%I:%M %p')} (Max Elevation: {max_elevation_value:.2f}°, Zenith: {max_zenith_value:.2f}°)
 Max Solar Noon Azimuth: {solar_noon_azimuth:.2f}°
 Average Solar Noon: {average_solar_noon_time.strftime('%I:%M %p')}
