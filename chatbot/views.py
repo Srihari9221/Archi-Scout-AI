@@ -17,6 +17,7 @@ from django.conf import settings
 from django.contrib.sessions.models import Session
 from django.http import JsonResponse
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required #1111
 
 lat = None
 lon = None
@@ -64,6 +65,10 @@ summary_prompt_for_llm = ChatPromptTemplate.from_messages(
 finetuned_llm_model = finetune_prompt | llm
 
 summary_llm_model = summary_prompt_for_llm | llm_2
+
+@login_required
+def index(request):
+    return render(request,'index.html')
 
 def chatbot(request):
     global lat,lon

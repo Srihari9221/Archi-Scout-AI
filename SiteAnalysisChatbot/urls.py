@@ -19,10 +19,19 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.generic import RedirectView
+from chatbot import views
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    path("",include("chatbot.urls")),
     path("admin/", admin.site.urls),
+    path("login/", auth_views.LoginView.as_view(template_name='login.html'), name='login'),  # Specify the template
+    path("index/", views.index, name="index"),  # Index view for logged-in users
+    path('social-auth/', include('social_django.urls', namespace='social')),
+    path("", RedirectView.as_view(url='/login/')),  # Redirect root URL to login page
+    path("", include("chatbot.urls")),  # Include chatbot app's URLs
 ]
+
+
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

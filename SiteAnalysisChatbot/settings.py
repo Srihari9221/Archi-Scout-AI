@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "chatbot",
+    "social_django",
+
 ]
 
 MIDDLEWARE = [
@@ -48,6 +50,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "social_django.middleware.SocialAuthExceptionMiddleware",
 ]
 
 ROOT_URLCONF = "SiteAnalysisChatbot.urls"
@@ -128,3 +131,28 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+
+
+AUTHENTICATION_BACKENDS = [ #1111
+    'social_core.backends.google.GoogleOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+#1111
+# siteanalysischatbot/settings.py
+LOGIN_URL = '/login/'  # URL for login page
+LOGIN_REDIRECT_URL = '/index/'  # URL to redirect to after login
+
+
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '460908055398-ilson0qdelhimlb8gpg7ji80iquabsbi.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = [
+    'https://www.googleapis.com/auth/generative-language.retriever', 
+    'https://www.googleapis.com/auth/cloud-platform', 
+    'https://www.googleapis.com/auth/generative-language.tuning',
+    'https://www.googleapis.com/auth/userinfo.email',
+    'https://www.googleapis.com/auth/userinfo.profile',
+]
