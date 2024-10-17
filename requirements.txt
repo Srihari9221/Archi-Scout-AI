@@ -24,3 +24,4 @@ django
 spacy 
 joblib 
 scikit-learn
+social-auth-app-django
