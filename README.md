@@ -39,7 +39,7 @@ deliver high-quality designs in a more timely manner.
 5. Navigate to the SiteAnalysisChatbot directory
 
    
-6. Run the Django project:
+6. Run the Django project :
    
    ```bash
    
